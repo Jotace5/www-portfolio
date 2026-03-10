@@ -3,7 +3,6 @@ import { Antic, Doto } from "next/font/google";
 import "./globals.css";
 import { Header } from "@/components/layout/Header";
 import { Footer } from "@/components/layout/Footer";
-import DotWave from "@/components/layout/DotWave";
 
 const antic = Antic({
   weight: "400",
@@ -17,8 +16,8 @@ const doto = Doto({
 });
 
 export const metadata: Metadata = {
-  title: "Juance — Portfolio",
-  description: "Juance's personal portfolio",
+  title: "JC — Portfolio",
+  description: "Jotace's personal portfolio",
 };
 
 export default function RootLayout({
@@ -33,7 +32,6 @@ export default function RootLayout({
       >
         <div className="min-h-screen flex flex-col">
           <Header />
-          <DotWave />
           <main className="flex-1 max-w-5xl mx-auto w-full px-6 md:px-12 py-12">
             {children}
           </main>

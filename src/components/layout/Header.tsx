@@ -9,13 +9,13 @@ const navLinks = [
 
 export function Header() {
   return (
-    <header className="py-6 px-6 md:px-12">
+    <header className="pt-6 pb-0 px-6 md:px-12">
       <div className="max-w-5xl mx-auto flex items-center justify-between">
         <Link
           href="/"
           className="font-[family-name:var(--font-doto)] text-black hover:text-[#4A90D9] transition-colors"
         >
-          Jotace
+         JC+
         </Link>
         <nav className="flex items-center gap-6">
           {navLinks.map((link) => (
