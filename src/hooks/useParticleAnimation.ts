@@ -12,6 +12,11 @@ import {
   DAMPING,
   RESTLESSNESS,
   COLOR_RETURN_SPEED,
+  PARTICLE_SIZE,
+  PARTICLE_OPACITY,
+  BASE_COLOR,
+  ACCENT_COLOR,
+  BACKGROUND_COLOR,
 } from "@/lib/particleUtils";
 
 export function useParticleAnimation(
@@ -66,7 +71,7 @@ export function useParticleAnimation(
       });
       renderer.setPixelRatio(window.devicePixelRatio);
       renderer.setSize(width, height);
-      renderer.setClearColor(0xffffff, 1);
+      renderer.setClearColor(BACKGROUND_COLOR, 1);
       rendererRef.current = renderer;
 
       // Create geometry
@@ -77,7 +82,7 @@ export function useParticleAnimation(
       velocitiesRef.current = new Float32Array(numParticles * 3);
       colorStatesRef.current = new Float32Array(numParticles);
 
-      const baseColor = new THREE.Color(0x1a1a2e);
+      const baseColor = new THREE.Color(BASE_COLOR);
 
       for (let i = 0; i < numParticles; i++) {
         const x = particles[i].x;
@@ -112,10 +117,10 @@ export function useParticleAnimation(
 
       // Material
       const material = new THREE.PointsMaterial({
-        size: 1.5,
+        size: PARTICLE_SIZE,
         vertexColors: true,
         transparent: true,
-        opacity: 0.85,
+        opacity: PARTICLE_OPACITY,
         sizeAttenuation: false,
       });
       materialRef.current = material;
@@ -147,8 +152,8 @@ export function useParticleAnimation(
     const homePositions = geometry.attributes.home.array as Float32Array;
     const colors = geometry.attributes.color.array as Float32Array;
 
-    const baseColor = new THREE.Color(0x1a1a2e);
-    const accentColor = new THREE.Color(0x4a90d9);
+    const baseColor = new THREE.Color(BASE_COLOR);
+    const accentColor = new THREE.Color(ACCENT_COLOR);
     const numParticles = positions.length / 3;
 
     const mouseX = mouseRef.current.x;
