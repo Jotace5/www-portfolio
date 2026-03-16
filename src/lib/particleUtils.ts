@@ -1,17 +1,16 @@
 // Configuration constants
-export const GAP = 2;
-export const MOUSE_RADIUS = 80;
-export const MOUSE_FORCE = 8;
-export const EASE_FACTOR = 0.08;
+export const GAP = 1;
+export const MOUSE_FORCE = 10000;
+export const EASE_FACTOR = 0.01;
 export const DAMPING = 0.92;
-export const RESTLESSNESS = 0.08;
+export const RESTLESSNESS = 0.1;
 export const COLOR_RETURN_SPEED = 0.03;
 
 // Visual constants
-export const PARTICLE_SIZE = 2.5;
+export const PARTICLE_SIZE = 1;
 export const PARTICLE_OPACITY = 1.0;
 export const BASE_COLOR = 0x1a1a2e;
-export const ACCENT_COLOR = 0x4a90d9;
+export const ACCENT_COLOR = 0x8b5cf6;
 export const BACKGROUND_COLOR = 0xffffff;
 
 export interface TextBlock {

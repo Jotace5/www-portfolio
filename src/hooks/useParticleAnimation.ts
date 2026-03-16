@@ -6,7 +6,6 @@ import {
   extractParticlesFromText,
   ParticleTextConfig,
   GAP,
-  MOUSE_RADIUS,
   MOUSE_FORCE,
   EASE_FACTOR,
   DAMPING,
@@ -36,6 +35,7 @@ export function useParticleAnimation(
   const dimensionsRef = useRef({ width: 0, height: 0, aspect: 1, frustumSize: 400 });
   const resizeTimeoutRef = useRef<NodeJS.Timeout | undefined>(undefined);
   const isActiveRef = useRef(true);
+  const mouseActiveRef = useRef(false);
 
   // Initialize Three.js scene
   const initScene = useCallback(
@@ -162,42 +162,56 @@ export function useParticleAnimation(
     for (let i = 0; i < numParticles; i++) {
       const idx = i * 3;
 
-      // Distance to mouse
-      const dx = positions[idx] - mouseX;
-      const dy = positions[idx + 1] - mouseY;
-      const dist = Math.sqrt(dx * dx + dy * dy);
+      // 1. Spring toward home
+      const dx = homePositions[idx] - positions[idx];
+      const dy = homePositions[idx + 1] - positions[idx + 1];
+      const distance = Math.sqrt(dx * dx + dy * dy);
+      const springAngle = Math.atan2(dy, dx);
 
+      let springForce: number;
+
+      if (distance > 0.01) {
+        springForce = distance * EASE_FACTOR;
+        // Only add restless drift when mouse is actively over the canvas
+        if (mouseActiveRef.current) {
+          springForce += (Math.random() - 0.5) * RESTLESSNESS;
+        }
+      } else {
+        // Snap to home and kill velocity
+        springForce = 0;
+        positions[idx] = homePositions[idx];
+        positions[idx + 1] = homePositions[idx + 1];
+        velocities[idx] = 0;
+        velocities[idx + 1] = 0;
+      }
+
+      // 2. Mouse repulsion (inverse-square, no radius cutoff)
+      let mouseForce = 0;
+      let mouseAngle = 0;
       let disturbed = false;
 
-      // Mouse repulsion
-      if (dist < MOUSE_RADIUS && dist > 0) {
-        const force = (MOUSE_RADIUS - dist) / MOUSE_RADIUS;
-        const angle = Math.atan2(dy, dx);
-        velocities[idx] += Math.cos(angle) * force * MOUSE_FORCE;
-        velocities[idx + 1] += Math.sin(angle) * force * MOUSE_FORCE;
-        disturbed = true;
+      if (mouseActiveRef.current) {
+        const mdx = positions[idx] - mouseX;
+        const mdy = positions[idx + 1] - mouseY;
+        const mouseDist2 = mdx * mdx + mdy * mdy;
+        mouseForce = Math.min(MOUSE_FORCE / mouseDist2, MOUSE_FORCE);
+        mouseAngle = Math.atan2(mdy, mdx);
+        disturbed = mouseForce > 0.5;
       }
 
-      // Restless drift when not disturbed
-      if (!disturbed) {
-        velocities[idx] += (Math.random() - 0.5) * RESTLESSNESS;
-        velocities[idx + 1] += (Math.random() - 0.5) * RESTLESSNESS;
-      }
+      // 3. Apply forces to velocity
+      velocities[idx] += springForce * Math.cos(springAngle) + mouseForce * Math.cos(mouseAngle);
+      velocities[idx + 1] += springForce * Math.sin(springAngle) + mouseForce * Math.sin(mouseAngle);
 
-      // Ease toward home
-      velocities[idx] += (homePositions[idx] - positions[idx]) * EASE_FACTOR;
-      velocities[idx + 1] +=
-        (homePositions[idx + 1] - positions[idx + 1]) * EASE_FACTOR;
-
-      // Damping
+      // 4. Damping
       velocities[idx] *= DAMPING;
       velocities[idx + 1] *= DAMPING;
 
-      // Update position
+      // 5. Update position
       positions[idx] += velocities[idx];
       positions[idx + 1] += velocities[idx + 1];
 
-      // Update color state
+      // 6. Update color state
       if (disturbed) {
         colorStates[i] = Math.min(1, colorStates[i] + 0.2);
       } else {
@@ -241,6 +255,7 @@ export function useParticleAnimation(
       mouseRef.current.y =
         -(event.clientY - rect.top - rect.height / 2) *
         (frustumSize / rect.height);
+      mouseActiveRef.current = true;
     },
     []
   );
@@ -248,6 +263,7 @@ export function useParticleAnimation(
   // Handle mouse leave
   const handleMouseLeave = useCallback(() => {
     mouseRef.current = { x: 9999, y: 9999 };
+    mouseActiveRef.current = false;
   }, []);
 
   // Handle resize with debounce

@@ -16,7 +16,7 @@ export default function ParticleText({ config, className }: ParticleTextProps) {
   return (
     <div
       ref={containerRef}
-      className={`w-full h-100 ${className || ""}`}
+      className={`w-full h-137.5 ${className || ""}`}
       aria-hidden="true"
     />
   );
