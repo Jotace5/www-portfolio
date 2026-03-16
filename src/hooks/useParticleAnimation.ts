@@ -3,7 +3,8 @@
 import { useCallback, useEffect, useRef } from "react";
 import * as THREE from "three";
 import {
-  extractParticlesFromImage,
+  extractParticlesFromText,
+  ParticleTextConfig,
   GAP,
   MOUSE_RADIUS,
   MOUSE_FORCE,
@@ -14,7 +15,7 @@ import {
 } from "@/lib/particleUtils";
 
 export function useParticleAnimation(
-  imageSrc: string,
+  config: ParticleTextConfig,
   containerRef: React.RefObject<HTMLDivElement | null>
 ) {
   const rendererRef = useRef<THREE.WebGLRenderer | null>(null);
@@ -34,7 +35,7 @@ export function useParticleAnimation(
   // Initialize Three.js scene
   const initScene = useCallback(
     async (width: number, height: number) => {
-      const particles = await extractParticlesFromImage(imageSrc, width, height);
+      const particles = await extractParticlesFromText(config, width, height);
       if (particles.length === 0) return false;
 
       const frustumSize = height;
@@ -126,7 +127,7 @@ export function useParticleAnimation(
 
       return true;
     },
-    [imageSrc] // extractParticlesFromImage is outside the component now
+    [config] // extractParticlesFromText is outside the component now
   );
 
   // Animation loop

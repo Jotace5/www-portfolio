@@ -1,13 +1,36 @@
 import ParticleText from "@/components/hero/ParticleText";
+import type { ParticleTextConfig } from "@/lib/particleUtils";
+
+const heroConfig: ParticleTextConfig = {
+  blocks: [
+    {
+      text: "Hi, I'm Jotace",
+      font: "bold 72px Doto",
+      offsetY: 0.12,
+    },
+    {
+      text: "Former architect who spent 12 years designing and building things, until what started as experimentation became the path forward. That drive got me into a small-team US startup where we built a full conversational AI platform from zero — voice pipelines, new channels integration, LLM systems, and event-driven architectures on Cloud Services. I designed features end-to-end, put them into production, and learned to think in reliable systems built to scale. No CS degree (for now) — just own motivation, work and a mind full of curiosity.",
+      font: "18px Antic",
+      offsetY: 0.28,
+      maxWidth: 0.8,
+      lineHeight: 1.5,
+    },
+    {
+      text: "Today, I'm still designing and building things — just with different tools.",
+      font: "18px Antic",
+      offsetY: 0.75,
+      maxWidth: 0.8,
+      lineHeight: 1.5,
+    },
+  ],
+};
 
 export default function Home() {
   return (
     <div>
-      <ParticleText
-        imageSrc="/images/hero-text.png"
-      />
+      <ParticleText config={heroConfig} />
       <p className="text-lg mt-8 text-[#1A1A2E]">
-        Self-made software engineer, ex-architect switching career. Building things that matter.
+        Creating things that matter.
       </p>
     </div>
   );

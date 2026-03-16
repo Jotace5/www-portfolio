@@ -2,20 +2,21 @@
 
 import { useRef } from "react";
 import { useParticleAnimation } from "@/hooks/useParticleAnimation";
+import { ParticleTextConfig } from "@/lib/particleUtils";
 
 interface ParticleTextProps {
-  imageSrc: string;
+  config: ParticleTextConfig;
   className?: string;
 }
 
-export default function ParticleText({ imageSrc, className }: ParticleTextProps) {
+export default function ParticleText({ config, className }: ParticleTextProps) {
   const containerRef = useRef<HTMLDivElement>(null);
-  useParticleAnimation(imageSrc, containerRef);
+  useParticleAnimation(config, containerRef);
 
   return (
     <div
       ref={containerRef}
-      className={`w-full h-[400px] ${className || ""}`}
+      className={`w-full h-100 ${className || ""}`}
       aria-hidden="true"
     />
   );
