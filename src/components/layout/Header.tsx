@@ -13,7 +13,7 @@ export function Header() {
       <div className="max-w-5xl mx-auto flex items-center justify-between">
         <Link
           href="/"
-          className="font-[family-name:var(--font-doto)] text-black hover:text-[#4A90D9] transition-colors"
+          className="font-(family-name:--font-doto)] text-black hover:text-[#4A90D9] transition-colors"
         >
          JC+
         </Link>
@@ -22,7 +22,7 @@ export function Header() {
             <Link
               key={link.href}
               href={link.href}
-              className="font-[family-name:var(--font-antic)] text-sm text-[#1A1A2E] hover:text-[#4A90D9] transition-colors"
+              className="font-(family-name:--font-antic)] text-sm text-[#1A1A2E] hover:text-[#4A90D9] transition-colors"
             >
               {link.label}
             </Link>
