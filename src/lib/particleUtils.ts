@@ -1,13 +1,15 @@
 // Configuration constants
 export const GAP = 1;
-export const MOUSE_FORCE = 15000;
-export const EASE_FACTOR = 0.04;
-export const DAMPING = 0.85;
-export const RESTLESSNESS = 0.05;
-export const COLOR_RETURN_SPEED = 0.03;
+export const VORTEX_TANGENTIAL = 80;   // fuerza de giro (componente dominante)
+export const VORTEX_ATTRACTION = 15;    // fuerza de atracción hacia el cursor (sutil)
+export const VORTEX_MAX_FORCE = 50;    // cap para evitar fuerzas infinitas a distancia ~0
+export const EASE_FACTOR = 0.01;
+export const DAMPING = 0.80;
+export const RESTLESSNESS = 0.1;
+export const COLOR_RETURN_SPEED = 5;
 
 // Visual constants
-export const PARTICLE_SIZE = 1.5;
+export const PARTICLE_SIZE = 1;
 export const PARTICLE_OPACITY = 1.0;
 export const BASE_COLOR = 0x1a1a2e;
 export const ACCENT_COLOR = 0x8b5cf6;
