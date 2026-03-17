@@ -338,6 +338,9 @@ export function useParticleAnimation(
     let cancelled = false;
 
     const setup = async () => {
+      
+      container.querySelectorAll("canvas").forEach((c) => c.remove());
+      
       const rect = container.getBoundingClientRect();
       const width = Math.max(100, rect.width);
       const height = Math.max(100, rect.height);
@@ -381,6 +384,7 @@ export function useParticleAnimation(
       if (renderer) {
         renderer.domElement.removeEventListener("mousemove", handleMouseMove);
         renderer.domElement.removeEventListener("mouseleave", handleMouseLeave);
+        renderer.domElement.remove();
         renderer.dispose();
       }
 

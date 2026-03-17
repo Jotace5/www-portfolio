@@ -28,7 +28,7 @@ export default function RootLayout({
   return (
     <html lang="en">
       <body
-        className={`${antic.variable} ${doto.variable} antialiased bg-white text-[#1A1A2E] font-[family-name:var(--font-antic)]`}
+        className={`${antic.variable} ${doto.variable} antialiased bg-white text-[#1A1A2E] font-(family-name:--font-antic)`}
       >
         <div className="min-h-screen flex flex-col">
           <Header />
