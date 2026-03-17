@@ -6,7 +6,9 @@ import {
   extractParticlesFromText,
   ParticleTextConfig,
   GAP,
-  MOUSE_FORCE,
+  VORTEX_TANGENTIAL,
+  VORTEX_ATTRACTION,
+  VORTEX_MAX_FORCE,
   EASE_FACTOR,
   DAMPING,
   RESTLESSNESS,
@@ -185,23 +187,40 @@ export function useParticleAnimation(
         velocities[idx + 1] = 0;
       }
 
-      // 2. Mouse repulsion (inverse-square, no radius cutoff)
-      let mouseForce = 0;
-      let mouseAngle = 0;
+      // 2. Vortex effect (tangential orbit + gentle attraction)
+      let vortexTangentialForce = 0;
+      let vortexAttractionForce = 0;
+      let tangentialAngle = 0;
+      let radialAngle = 0;
       let disturbed = false;
 
       if (mouseActiveRef.current) {
         const mdx = positions[idx] - mouseX;
         const mdy = positions[idx + 1] - mouseY;
-        const mouseDist2 = mdx * mdx + mdy * mdy;
-        mouseForce = Math.min(MOUSE_FORCE / mouseDist2, MOUSE_FORCE);
-        mouseAngle = Math.atan2(mdy, mdx);
-        disturbed = mouseForce > 0.5;
+        const mouseDist = Math.sqrt(mdx * mdx + mdy * mdy);
+
+        if (mouseDist > 0.1) {
+          // Usar 1/dist (no 1/dist²) para alcance más amplio del vórtice
+          radialAngle = Math.atan2(mdy, mdx);
+          tangentialAngle = radialAngle + Math.PI / 2; // counterclockwise
+
+          vortexTangentialForce = Math.min(VORTEX_TANGENTIAL / mouseDist, VORTEX_MAX_FORCE);
+          vortexAttractionForce = Math.min(VORTEX_ATTRACTION / mouseDist, VORTEX_MAX_FORCE);
+
+          disturbed = vortexTangentialForce > 0.9;
+        }
       }
 
       // 3. Apply forces to velocity
-      velocities[idx] += springForce * Math.cos(springAngle) + mouseForce * Math.cos(mouseAngle);
-      velocities[idx + 1] += springForce * Math.sin(springAngle) + mouseForce * Math.sin(mouseAngle);
+      velocities[idx] +=
+        springForce * Math.cos(springAngle) +
+        vortexTangentialForce * Math.cos(tangentialAngle) -
+        vortexAttractionForce * Math.cos(radialAngle);
+
+      velocities[idx + 1] +=
+        springForce * Math.sin(springAngle) +
+        vortexTangentialForce * Math.sin(tangentialAngle) -
+        vortexAttractionForce * Math.sin(radialAngle);
 
       // 4. Damping
       velocities[idx] *= DAMPING;
