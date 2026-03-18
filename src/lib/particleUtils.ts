@@ -21,6 +21,7 @@ export interface TextBlock {
   marginTop: number;     // pixel gap above this block
   maxWidth?: number;     // ratio of container width (e.g. 0.8 = 80%). Default: 0.9
   lineHeight?: number;   // multiplier over font size (e.g. 1.5). Default: 1.4
+  alphaThreshold?: number; // minimum alpha to sample a pixel as particle. Default: 128
 }
 
 export interface ParticleTextConfig {
@@ -54,6 +55,15 @@ export const extractParticlesFromText = async (
   const paddingBottom = config.paddingBottom ?? 60;
   let cursorY = paddingTop;
 
+  // Pass 1: Layout calculation
+  interface LayoutBlock {
+    block: TextBlock;
+    scaledFont: string;
+    lines: { text: string; x: number; y: number }[];
+  }
+  
+  const layoutBlocks: LayoutBlock[] = [];
+
   config.blocks.forEach((block) => {
     // Parse the numeric font size from the font string
     const fontSizeMatch = block.font.match(/(\d+)px/);
@@ -72,6 +82,7 @@ export const extractParticlesFromText = async (
 
     const words = block.text.split(" ");
     let currentLine = "";
+    const lines: { text: string; x: number; y: number }[] = [];
 
     for (let i = 0; i < words.length; i++) {
       const testLine = currentLine + words[i] + " ";
@@ -79,34 +90,45 @@ export const extractParticlesFromText = async (
       const testWidth = metrics.width;
 
       if (testWidth > maxWidth && i > 0) {
-        ctx.fillText(currentLine.trim(), x, cursorY);
+        lines.push({ text: currentLine.trim(), x, y: cursorY });
         currentLine = words[i] + " ";
         cursorY += scaledFontSize * lineHeight;
       } else {
         currentLine = testLine;
       }
     }
-    ctx.fillText(currentLine.trim(), x, cursorY);
+    lines.push({ text: currentLine.trim(), x, y: cursorY });
+    layoutBlocks.push({ block, scaledFont, lines });
   });
 
   const contentHeight = cursorY + paddingBottom;
-
-  const imageData = ctx.getImageData(0, 0, containerWidth, contentHeight);
-  const pixels = imageData.data;
   const particles: { x: number; y: number }[] = [];
 
-  for (let y = 0; y < contentHeight; y += GAP) {
-    for (let x = 0; x < containerWidth; x += GAP) {
-      const index = (y * containerWidth + x) * 4;
-      const alpha = pixels[index + 3];
-      if (alpha > 128) {
-        particles.push({
-          x: x - containerWidth / 2,
-          y: -(y - contentHeight / 2),
-        });
+  // Pass 2: Render and sample per block
+  layoutBlocks.forEach(({ block, scaledFont, lines }) => {
+    ctx.clearRect(0, 0, containerWidth, offscreen.height);
+    
+    ctx.font = scaledFont;
+    lines.forEach((line) => {
+      ctx.fillText(line.text, line.x, line.y);
+    });
+    
+    const imageData = ctx.getImageData(0, 0, containerWidth, contentHeight);
+    const pixels = imageData.data;
+    const threshold = block.alphaThreshold ?? 128;
+    
+    for (let y = 0; y < contentHeight; y += GAP) {
+      for (let x = 0; x < containerWidth; x += GAP) {
+        const index = (y * containerWidth + x) * 4;
+        if (pixels[index + 3] >= threshold) {
+          particles.push({
+            x: x - containerWidth / 2,
+            y: -(y - contentHeight / 2),
+          });
+        }
       }
     }
-  }
+  });
 
   return { particles, contentHeight };
 };

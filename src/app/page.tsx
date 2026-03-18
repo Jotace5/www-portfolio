@@ -7,7 +7,7 @@ const heroConfig: ParticleTextConfig = {
   blocks: [
     {
       text: "Hi, I'm Juan",
-      font: "bold 40px Doto",
+      font: "bold 48px Doto",
       marginTop: 50,
     },
     {
@@ -16,6 +16,7 @@ const heroConfig: ParticleTextConfig = {
       marginTop: 60,
       maxWidth: 0.95,
       lineHeight: 1.5,
+      alphaThreshold: 30,
     },
     {
       text: "Today, I'm still designing and building things — just with different tools.",
@@ -23,6 +24,7 @@ const heroConfig: ParticleTextConfig = {
       marginTop: 60,
       maxWidth: 0.95,
       lineHeight: 1.5,
+      alphaThreshold: 30,
     },
   ],
 };
