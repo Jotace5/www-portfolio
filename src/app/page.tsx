@@ -2,6 +2,8 @@ import ParticleText from "@/components/hero/ParticleText";
 import type { ParticleTextConfig } from "@/lib/particleUtils";
 
 const heroConfig: ParticleTextConfig = {
+  paddingTop: 20,
+  paddingBottom: 60,
   blocks: [
     {
       text: "Hi, I'm Juan",

@@ -41,9 +41,11 @@ export function useParticleAnimation(
 
   // Initialize Three.js scene
   const initScene = useCallback(
-    async (width: number, height: number) => {
-      const particles = await extractParticlesFromText(config, width, height);
+    async (width: number) => {
+      const { particles, contentHeight } = await extractParticlesFromText(config, width);
       if (particles.length === 0) return false;
+
+      const height = Math.max(100, contentHeight);
 
       const frustumSize = height;
       const aspect = width / height;
@@ -132,7 +134,7 @@ export function useParticleAnimation(
       scene.add(points);
       pointsRef.current = points;
 
-      return true;
+      return height;
     },
     [config] // extractParticlesFromText is outside the component now
   );
@@ -299,7 +301,6 @@ export function useParticleAnimation(
     resizeTimeoutRef.current = setTimeout(async () => {
       const rect = container.getBoundingClientRect();
       const width = Math.max(100, rect.width);
-      const height = Math.max(100, rect.height);
 
       // Clean up old scene
       if (geometryRef.current) {
@@ -318,11 +319,12 @@ export function useParticleAnimation(
       }
 
       // Initialize new scene
-      const success = await initScene(width, height);
-      if (success) {
+      const newHeight = await initScene(width);
+      if (newHeight !== false) {
         const renderer = rendererRef.current;
         if (renderer && container) {
           container.appendChild(renderer.domElement);
+          container.style.height = `${newHeight}px`;
           renderer.domElement.addEventListener("mousemove", handleMouseMove);
           renderer.domElement.addEventListener("mouseleave", handleMouseLeave);
         }
@@ -343,14 +345,14 @@ export function useParticleAnimation(
       
       const rect = container.getBoundingClientRect();
       const width = Math.max(100, rect.width);
-      const height = Math.max(100, rect.height);
 
-      const success = await initScene(width, height);
-      if (cancelled || !success) return;
+      const newHeight = await initScene(width);
+      if (cancelled || newHeight === false) return;
 
       const renderer = rendererRef.current;
       if (renderer && container) {
         container.appendChild(renderer.domElement);
+        container.style.height = `${newHeight}px`;
 
         // Add event listeners
         renderer.domElement.addEventListener("mousemove", handleMouseMove);

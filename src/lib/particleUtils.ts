@@ -27,40 +27,48 @@ export interface ParticleTextConfig {
   blocks: TextBlock[];
   color?: string;      // fill color, default "#000000"
   textAlign?: CanvasTextAlign; // default "center"
+  paddingTop?: number;
+  paddingBottom?: number;
 }
 
 export const extractParticlesFromText = async (
   config: ParticleTextConfig,
-  containerWidth: number,
-  containerHeight: number
-): Promise<{ x: number; y: number }[]> => {
+  containerWidth: number
+): Promise<{ particles: { x: number; y: number }[]; contentHeight: number }> => {
   await document.fonts.ready;
 
   const offscreen = document.createElement("canvas");
   const ctx = offscreen.getContext("2d", { willReadFrequently: true });
-  if (!ctx) return [];
+  if (!ctx) return { particles: [], contentHeight: 0 };
+
+  const scaleFactor = containerWidth < 640 ? containerWidth / 640 : 1;
 
   offscreen.width = containerWidth;
-  offscreen.height = containerHeight;
+  offscreen.height = 2000;
 
   ctx.fillStyle = config.color || "#000000";
   ctx.textAlign = config.textAlign || "center";
   ctx.textBaseline = "middle";
 
-  let cursorY = 0;
+  const paddingTop = config.paddingTop ?? 20;
+  const paddingBottom = config.paddingBottom ?? 60;
+  let cursorY = paddingTop;
 
   config.blocks.forEach((block) => {
-    ctx.font = block.font;
-    const x = ctx.textAlign === "center" ? containerWidth / 2 : (ctx.textAlign === "right" ? containerWidth : 0);
-
     // Parse the numeric font size from the font string
     const fontSizeMatch = block.font.match(/(\d+)px/);
     const fontSize = fontSizeMatch ? parseInt(fontSizeMatch[1], 10) : 16;
+    
+    const scaledFontSize = Math.round(fontSize * scaleFactor);
+    const scaledFont = block.font.replace(`${fontSize}px`, `${scaledFontSize}px`);
+    ctx.font = scaledFont;
+
+    const x = ctx.textAlign === "center" ? containerWidth / 2 : (ctx.textAlign === "right" ? containerWidth : 0);
 
     const maxWidth = (block.maxWidth ?? 0.9) * containerWidth;
     const lineHeight = block.lineHeight ?? 1.4;
 
-    cursorY += block.marginTop;
+    cursorY += block.marginTop * scaleFactor;
 
     const words = block.text.split(" ");
     let currentLine = "";
@@ -73,7 +81,7 @@ export const extractParticlesFromText = async (
       if (testWidth > maxWidth && i > 0) {
         ctx.fillText(currentLine.trim(), x, cursorY);
         currentLine = words[i] + " ";
-        cursorY += fontSize * lineHeight;
+        cursorY += scaledFontSize * lineHeight;
       } else {
         currentLine = testLine;
       }
@@ -81,22 +89,24 @@ export const extractParticlesFromText = async (
     ctx.fillText(currentLine.trim(), x, cursorY);
   });
 
-  const imageData = ctx.getImageData(0, 0, containerWidth, containerHeight);
+  const contentHeight = cursorY + paddingBottom;
+
+  const imageData = ctx.getImageData(0, 0, containerWidth, contentHeight);
   const pixels = imageData.data;
   const particles: { x: number; y: number }[] = [];
 
-  for (let y = 0; y < containerHeight; y += GAP) {
+  for (let y = 0; y < contentHeight; y += GAP) {
     for (let x = 0; x < containerWidth; x += GAP) {
       const index = (y * containerWidth + x) * 4;
       const alpha = pixels[index + 3];
       if (alpha > 128) {
         particles.push({
           x: x - containerWidth / 2,
-          y: -(y - containerHeight / 2),
+          y: -(y - contentHeight / 2),
         });
       }
     }
   }
 
-  return particles;
+  return { particles, contentHeight };
 };
