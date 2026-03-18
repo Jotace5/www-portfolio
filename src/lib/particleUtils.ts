@@ -42,8 +42,6 @@ export const extractParticlesFromText = async (
   const ctx = offscreen.getContext("2d", { willReadFrequently: true });
   if (!ctx) return { particles: [], contentHeight: 0 };
 
-  const scaleFactor = containerWidth < 640 ? containerWidth / 640 : 1;
-
   offscreen.width = containerWidth;
   offscreen.height = 2000;
 
@@ -58,7 +56,6 @@ export const extractParticlesFromText = async (
   // Pass 1: Layout calculation
   interface LayoutBlock {
     block: TextBlock;
-    scaledFont: string;
     lines: { text: string; x: number; y: number }[];
   }
   
@@ -69,16 +66,14 @@ export const extractParticlesFromText = async (
     const fontSizeMatch = block.font.match(/(\d+)px/);
     const fontSize = fontSizeMatch ? parseInt(fontSizeMatch[1], 10) : 16;
     
-    const scaledFontSize = Math.round(fontSize * scaleFactor);
-    const scaledFont = block.font.replace(`${fontSize}px`, `${scaledFontSize}px`);
-    ctx.font = scaledFont;
+    ctx.font = block.font;
 
     const x = ctx.textAlign === "center" ? containerWidth / 2 : (ctx.textAlign === "right" ? containerWidth : 0);
 
     const maxWidth = (block.maxWidth ?? 0.9) * containerWidth;
     const lineHeight = block.lineHeight ?? 1.4;
 
-    cursorY += block.marginTop * scaleFactor;
+    cursorY += block.marginTop;
 
     const words = block.text.split(" ");
     let currentLine = "";
@@ -92,23 +87,23 @@ export const extractParticlesFromText = async (
       if (testWidth > maxWidth && i > 0) {
         lines.push({ text: currentLine.trim(), x, y: cursorY });
         currentLine = words[i] + " ";
-        cursorY += scaledFontSize * lineHeight;
+        cursorY += fontSize * lineHeight;
       } else {
         currentLine = testLine;
       }
     }
     lines.push({ text: currentLine.trim(), x, y: cursorY });
-    layoutBlocks.push({ block, scaledFont, lines });
+    layoutBlocks.push({ block, lines });
   });
 
   const contentHeight = cursorY + paddingBottom;
   const particles: { x: number; y: number }[] = [];
 
   // Pass 2: Render and sample per block
-  layoutBlocks.forEach(({ block, scaledFont, lines }) => {
+  layoutBlocks.forEach(({ block, lines }) => {
     ctx.clearRect(0, 0, containerWidth, offscreen.height);
     
-    ctx.font = scaledFont;
+    ctx.font = block.font;
     lines.forEach((line) => {
       ctx.fillText(line.text, line.x, line.y);
     });
