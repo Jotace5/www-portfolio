@@ -16,7 +16,7 @@ const heroConfig: ParticleTextConfig = {
       marginTop: 60,
       maxWidth: 0.95,
       lineHeight: 1.5,
-      alphaThreshold: 30,
+      alphaThreshold: 70,
     },
     {
       text: "Today, I'm still designing and building things — just with different tools.",
@@ -24,7 +24,7 @@ const heroConfig: ParticleTextConfig = {
       marginTop: 60,
       maxWidth: 0.95,
       lineHeight: 1.5,
-      alphaThreshold: 30,
+      alphaThreshold: 70,
     },
   ],
 };
