@@ -1,5 +1,6 @@
 import ParticleText from "@/components/hero/ParticleText";
 import type { ParticleTextConfig } from "@/lib/particleUtils";
+import { ProjectsSection } from '@/components/projects/ProjectsSection';
 
 const heroConfig: ParticleTextConfig = {
   paddingTop: 20,
@@ -33,9 +34,13 @@ export default function Home() {
   return (
     <div>
       <ParticleText config={heroConfig} />
-      <p className="text-lg mt-8 text-[#1A1A2E]">
-        Creating things that matter.
-      </p>
+      {/* Projects Section */}
+      <section id="projects" className="mt-20">
+        <h2 className="font-(family-name:--font-doto) text-3xl text-black mb-8">
+          Projects
+        </h2>
+        <ProjectsSection />
+      </section>
     </div>
   );
 }
