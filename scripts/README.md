@@ -179,8 +179,7 @@ You can also trigger the workflow manually from the Actions tab in GitHub (`work
 2. Sets up Node.js 22 and installs dependencies (`npm ci`)
 3. Sets up Python 3.12 and installs `setuptools<70` + `emerge-viz`
 4. Runs `bash scripts/analyze.sh` — clones each configured repo, runs emerge, then runs `transform.ts` to produce the final JSONs
-5. If any `public/data/projects/*.json` files changed, commits them back to the repo with `chore: update project analysis data [skip ci]`
-6. Pushes the commit to `main`, which triggers Vercel auto-deploy
+5. If any `public/data/projects/*.json` files changed, creates a branch and opens a PR for review
 
 ### Flow for adding a new project
 
@@ -190,11 +189,10 @@ You can also trigger the workflow manually from the Actions tab in GitHub (`work
 3. Push, open PR, merge to main
 4. GitHub Action triggers automatically
 5. VM clones repos → runs emerge → runs transform.ts
-6. Action commits generated JSONs back to repo
-7. Vercel auto-deploys with fresh data
-8. Visualizer on jotace.io shows the new project
+6. Action opens a PR with the generated JSONs
+7. You review and merge the PR
+8. Vercel auto-deploys with fresh data
+9. Visualizer on jotace.io shows the new project
 ```
 
-### Loop prevention
-
-The Action's commit uses `[skip ci]` in the commit message to prevent the push from triggering another workflow run. Additionally, the push trigger uses `paths` filtering so only changes to `projects.config.json` trigger a run — changes to `public/data/projects/` are ignored.
+The Action never pushes directly to `main` — it always creates a PR for manual review.

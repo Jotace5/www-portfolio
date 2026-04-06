@@ -178,18 +178,15 @@ YAML
   cp "$EXPORT_DIR/html/resources/js/emerge_data.js" \
      "$RAW_DIR/$name/emerge-data.js" 2>/dev/null || true
      
-  # 6h. Transform placeholder
-  # ---------------------------------------------------------
-  # Transform step (not yet implemented)
-  # ---------------------------------------------------------
-  # Once scripts/transform.ts is built, this section will run:
-  #   npx tsx "$SCRIPT_DIR/transform.ts" \
-  #     --input "$RAW_DIR/$name" \
-  #     --output "$OUTPUT_DIR/$name.json"
-  #
-  # For now, raw emerge output is saved for validation.
-  # ---------------------------------------------------------
-  echo "Raw output saved to: $RAW_DIR/$name/"
+  # 6h. Transform raw output to visualizer format
+  echo "Running transform..."
+  if npx tsx "$SCRIPT_DIR/transform.ts" \
+    --input "$RAW_DIR/$name" \
+    --output "$OUTPUT_DIR/$name.json"; then
+    echo "Transform complete: $OUTPUT_DIR/$name.json"
+  else
+    echo "WARNING: Transform failed for $name — raw output preserved in $RAW_DIR/$name/"
+  fi
   
   # 6i. Success message
   echo "✅ $name — analysis complete"
@@ -204,17 +201,13 @@ echo "========================================="
 echo "  Pipeline complete"
 echo "========================================="
 echo ""
-echo "Raw emerge data saved to:"
-echo "  $RAW_DIR"
-echo ""
-echo "Analyzed projects:"
-for dir in "$RAW_DIR"/*/; do
-  if [ -d "$dir" ]; then
-    project_name=$(basename "$dir")
-    node_count=$(jq '.nodes | length' "$dir/dependency-graph.json" 2>/dev/null || echo "?")
-    edge_count=$(jq '.edges | length' "$dir/dependency-graph.json" 2>/dev/null || echo "?")
-    echo "  • $project_name: $node_count files, $edge_count dependencies"
+echo "Generated visualizer data:"
+for json_file in "$OUTPUT_DIR"/*.json; do
+  if [ -f "$json_file" ]; then
+    project_name=$(basename "$json_file" .json)
+    node_count=$(jq '.meta.totalFiles' "$json_file" 2>/dev/null || echo "?")
+    edge_count=$(jq '.meta.totalEdges' "$json_file" 2>/dev/null || echo "?")
+    sloc=$(jq '.meta.totalSloc' "$json_file" 2>/dev/null || echo "?")
+    echo "  • $project_name: $node_count files, $edge_count dependencies, $sloc SLOC"
   fi
 done
-echo ""
-echo "Next step: build scripts/transform.ts to convert raw data to visualizer format."

@@ -1,0 +1,77 @@
+name: Analyze Projects
+
+on:
+  push:
+    branches: [main]
+    paths:
+      - 'projects.config.json'
+  schedule:
+    # Weekly: Mondays at 6:00 AM UTC
+    - cron: '0 6 * * 1'
+  workflow_dispatch:
+
+permissions:
+  contents: write
+  pull-requests: write
+
+jobs:
+  analyze:
+    runs-on: ubuntu-latest
+    timeout-minutes: 30
+
+    steps:
+      - name: Checkout repository
+        uses: actions/checkout@v4
+
+      - name: Setup Node.js
+        uses: actions/setup-node@v4
+        with:
+          node-version: '22'
+          cache: 'npm'
+
+      - name: Install Node dependencies
+        run: npm ci
+
+      - name: Setup Python
+        uses: actions/setup-python@v5
+        with:
+          python-version: '3.12'
+
+      - name: Install emerge-viz
+        run: |
+          pip install "setuptools<70" emerge-viz
+
+      - name: Verify dependencies
+        run: |
+          node --version
+          python3 --version
+          emerge --help > /dev/null 2>&1 && echo "emerge-viz: OK" || echo "emerge-viz: FAIL"
+          jq --version
+
+      - name: Run analysis pipeline
+        run: bash scripts/analyze.sh
+
+      - name: Create PR with generated data
+        env:
+          GH_TOKEN: ${{ github.token }}
+        run: |
+          git config user.name "github-actions[bot]"
+          git config user.email "github-actions[bot]@users.noreply.github.com"
+          
+          git add public/data/projects/*.json
+          
+          if git diff --cached --quiet; then
+            echo "No changes to commit"
+            exit 0
+          fi
+          
+          BRANCH="chore/update-analysis-data-$(date +%Y%m%d)"
+          git checkout -b "$BRANCH"
+          git commit -m "chore: update project analysis data"
+          git push origin "$BRANCH"
+          
+          gh pr create \
+            --title "chore: update project analysis data" \
+            --body "Automated codebase analysis run. Updates visualizer JSON files in \`public/data/projects/\`." \
+            --base main \
+            --head "$BRANCH"
