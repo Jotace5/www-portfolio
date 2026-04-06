@@ -1,0 +1,20 @@
+[
+  {
+    "name": "www-portfolio",
+    "repo": "Jotace5/www-portfolio",
+    "sourceDir": "src",
+    "languages": ["typescript"],
+    "extensions": [".ts", ".tsx"],
+    "ignoreDependencies": [],
+    "ignoreDirectories": [".git"]
+  },
+  {
+    "name": "audio-transcriber",
+    "repo": "Jotace5/audio-transcriber",
+    "sourceDir": ".",
+    "languages": ["python"],
+    "extensions": [".py"],
+    "ignoreDependencies": [],
+    "ignoreDirectories": [".git"]
+  }
+]
