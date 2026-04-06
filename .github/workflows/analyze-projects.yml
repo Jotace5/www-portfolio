@@ -68,7 +68,8 @@ jobs:
           BRANCH="chore/update-analysis-data-$(date +%Y%m%d)"
           git checkout -b "$BRANCH"
           git commit -m "chore: update project analysis data"
-          git push --force-with-lease origin "$BRANCH"
+          git push origin --delete "$BRANCH" 2>/dev/null || true
+          git push origin "$BRANCH"
           
           EXISTING_PR=$(gh pr list --head "$BRANCH" --state open --json number --jq '.[0].number')
           if [ -n "$EXISTING_PR" ]; then
