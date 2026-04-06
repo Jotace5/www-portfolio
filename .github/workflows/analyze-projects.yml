@@ -68,10 +68,15 @@ jobs:
           BRANCH="chore/update-analysis-data-$(date +%Y%m%d)"
           git checkout -b "$BRANCH"
           git commit -m "chore: update project analysis data"
-          git push origin "$BRANCH"
+          git push --force-with-lease origin "$BRANCH"
           
-          gh pr create \
-            --title "chore: update project analysis data" \
-            --body "Automated codebase analysis run. Updates visualizer JSON files in \`public/data/projects/\`." \
-            --base main \
-            --head "$BRANCH"
+          EXISTING_PR=$(gh pr list --head "$BRANCH" --state open --json number --jq '.[0].number')
+          if [ -n "$EXISTING_PR" ]; then
+            echo "PR #$EXISTING_PR already exists — updated with new data"
+          else
+            gh pr create \
+              --title "chore: update project analysis data" \
+              --body "Automated codebase analysis run. Updates visualizer JSON files in \`public/data/projects/\`." \
+              --base main \
+              --head "$BRANCH"
+          fi
