@@ -12,6 +12,115 @@ import {
   VizOutput
 } from '../src/lib/types/emerge';
 
+function computeForceDirectedLayout(nodes: VizNode[], edges: VizEdge[]): Map<string, { x: number; y: number; z: number }> {
+  const ITERATIONS = 200;
+  const REPULSION = 800;
+  const ATTRACTION = 0.01;
+  const DAMPING = 0.9;
+  const MIN_DISTANCE = 0.01;
+
+  const positions = new Map<string, { x: number; y: number; z: number }>();
+  const velocities = new Map<string, { x: number; y: number; z: number }>();
+
+  for (const node of nodes) {
+    positions.set(node.id, {
+      x: (Math.random() - 0.5) * 80,
+      y: (Math.random() - 0.5) * 80,
+      z: (Math.random() - 0.5) * 80
+    });
+    velocities.set(node.id, { x: 0, y: 0, z: 0 });
+  }
+
+  for (let iter = 0; iter < ITERATIONS; iter++) {
+    const cooling = 1 - (iter / ITERATIONS);
+    const forces = new Map<string, { fx: number; fy: number; fz: number }>();
+    for (const node of nodes) forces.set(node.id, { fx: 0, fy: 0, fz: 0 });
+
+    for (let i = 0; i < nodes.length; i++) {
+      for (let j = i + 1; j < nodes.length; j++) {
+        const a = nodes[i];
+        const b = nodes[j];
+        const posA = positions.get(a.id)!;
+        const posB = positions.get(b.id)!;
+
+        const dx = posA.x - posB.x;
+        const dy = posA.y - posB.y;
+        const dz = posA.z - posB.z;
+        const distSq = dx * dx + dy * dy + dz * dz;
+        const dist = Math.max(Math.sqrt(distSq), MIN_DISTANCE);
+
+        const forceMagnitude = REPULSION / Math.max(distSq, MIN_DISTANCE * MIN_DISTANCE);
+        const fx = (dx / dist) * forceMagnitude;
+        const fy = (dy / dist) * forceMagnitude;
+        const fz = (dz / dist) * forceMagnitude;
+
+        const fA = forces.get(a.id)!;
+        fA.fx += fx; fA.fy += fy; fA.fz += fz;
+        const fB = forces.get(b.id)!;
+        fB.fx -= fx; fB.fy -= fy; fB.fz -= fz;
+      }
+    }
+
+    for (const edge of edges) {
+      const posSource = positions.get(edge.source);
+      const posTarget = positions.get(edge.target);
+      if (!posSource || !posTarget) continue;
+
+      const dx = posTarget.x - posSource.x;
+      const dy = posTarget.y - posSource.y;
+      const dz = posTarget.z - posSource.z;
+      const distSq = dx * dx + dy * dy + dz * dz;
+      const dist = Math.max(Math.sqrt(distSq), MIN_DISTANCE);
+
+      const forceMagnitude = dist * ATTRACTION;
+      const fx = (dx / dist) * forceMagnitude;
+      const fy = (dy / dist) * forceMagnitude;
+      const fz = (dz / dist) * forceMagnitude;
+
+      const fSource = forces.get(edge.source)!;
+      fSource.fx += fx; fSource.fy += fy; fSource.fz += fz;
+      const fTarget = forces.get(edge.target)!;
+      fTarget.fx -= fx; fTarget.fy -= fy; fTarget.fz -= fz;
+    }
+
+    for (const node of nodes) {
+      const v = velocities.get(node.id)!;
+      const p = positions.get(node.id)!;
+      const f = forces.get(node.id)!;
+
+      v.x = (v.x + f.fx) * DAMPING * cooling;
+      v.y = (v.y + f.fy) * DAMPING * cooling;
+      v.z = (v.z + f.fz) * DAMPING * cooling;
+
+      p.x += v.x;
+      p.y += v.y;
+      p.z += v.z;
+    }
+  }
+
+  if (nodes.length > 0) {
+    let cx = 0, cy = 0, cz = 0;
+    for (const node of nodes) {
+      const p = positions.get(node.id)!;
+      cx += p.x;
+      cy += p.y;
+      cz += p.z;
+    }
+    cx /= nodes.length;
+    cy /= nodes.length;
+    cz /= nodes.length;
+
+    for (const node of nodes) {
+      const p = positions.get(node.id)!;
+      p.x -= cx;
+      p.y -= cy;
+      p.z -= cz;
+    }
+  }
+
+  return positions;
+}
+
 // 1. Parse CLI arguments
 const args = process.argv.slice(2);
 let inputDir = '';
@@ -161,6 +270,7 @@ for (const node of realNodes) {
       fanOut: node['metric_fan-out-dependency-graph'] || 0,
     },
     normalized: { size: 0, heat: 0 },
+    position: { x: 0, y: 0, z: 0 },
     cluster: {
       id: node['metric_file_result_dependency_graph_louvain-modularity-in-file'] || 0,
       label: '' 
@@ -222,6 +332,17 @@ const recalcMaxFanOut = Math.max(...cleanNodes.map(n => n.metrics.fanOut), 1);
 const recalcMaxSloc = Math.max(...cleanNodes.map(n => n.metrics.sloc), 1);
 for (const node of cleanNodes) {
   node.normalized.heat = (node.metrics.sloc / recalcMaxSloc) * 0.6 + (node.metrics.fanOut / recalcMaxFanOut) * 0.4;
+}
+
+// 9.5 Compute force-directed layout positions
+const layoutPositions = computeForceDirectedLayout(cleanNodes, cleanEdges);
+for (const node of cleanNodes) {
+  const pos = layoutPositions.get(node.id);
+  if (pos) {
+    node.position = pos;
+  } else {
+    node.position = { x: 0, y: 0, z: 0 };
+  }
 }
 
 // 10. Build filesystem edges from clean node paths (ignore emerge's broken filesystem graph)
