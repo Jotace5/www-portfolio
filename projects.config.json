@@ -6,15 +6,10 @@
     "languages": ["typescript"],
     "extensions": [".ts", ".tsx"],
     "ignoreDependencies": [],
-    "ignoreDirectories": [".git"]
-  },
-  {
-    "name": "audio-transcriber",
-    "repo": "Jotace5/audio-transcriber",
-    "sourceDir": ".",
-    "languages": ["python"],
-    "extensions": [".py"],
-    "ignoreDependencies": [],
-    "ignoreDirectories": [".git"]
+    "ignoreDirectories": [".git"],
+    "frontend": {
+      "displayName": "Portfolio Website",
+      "order": 1
+    }
   }
 ]

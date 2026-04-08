@@ -28,7 +28,7 @@ export interface FileTreeEntry {
 
 /** Consolidated project data returned by our API route */
 export interface ProjectData {
-  status: "available" | "coming-soon";
+  status: "available";
   repoName: string;
   displayName: string;
   metadata: RepoMetadata | null;
@@ -36,11 +36,24 @@ export interface ProjectData {
   fileTree: FileTreeEntry[];
 }
 
+/** Single entry in projects.config.json */
+export interface ProjectConfigEntry {
+  name: string;
+  repo: string;
+  sourceDir: string;
+  languages: string[];
+  extensions: string[];
+  ignoreDependencies: string[];
+  ignoreDirectories?: string[];
+  frontend: {
+    displayName: string;
+    order: number;
+  };
+}
+
 /** Config for a featured project in the projects list */
 export interface FeaturedProject {
   repoName: string;
   displayName: string;
   order: number;
-  comingSoonDescription?: string;  // Used when repo doesn't exist yet
-  comingSoonTech?: string[];       // Placeholder tech tags for coming-soon projects
 }

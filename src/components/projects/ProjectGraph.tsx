@@ -5,8 +5,7 @@ interface ProjectGraphProps {
 }
 
 export function ProjectGraph({ project }: ProjectGraphProps) {
-  const isComingSoon = project.status === "coming-soon";
-  const label = isComingSoon ? "Coming soon" : "Graph visualization";
+  const label = "Graph visualization";
 
   return (
     <div className="relative w-full aspect-video rounded-xl bg-[#F8F9FA] border border-[#4A90D9]/10 overflow-hidden">

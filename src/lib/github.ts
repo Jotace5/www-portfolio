@@ -13,14 +13,7 @@ export async function fetchProjectData(repoName: string, displayName: string): P
   const data = await response.json();
 
   if (data.status === "not-found") {
-    return {
-      status: "coming-soon",
-      repoName,
-      displayName,
-      metadata: null,
-      languages: [],
-      fileTree: [],
-    };
+    throw new Error(`Project ${repoName} not found on backend`);
   }
 
   return {
@@ -43,17 +36,6 @@ export async function fetchAllProjects(): Promise<ProjectData[]> {
       projects.push(result.value);
     } else {
       console.error(`Error fetching project ${config.repoName}:`, result.reason);
-
-      if (config.comingSoonDescription) {
-        projects.push({
-          status: "coming-soon",
-          repoName: config.repoName,
-          displayName: config.displayName,
-          metadata: null,
-          languages: [],
-          fileTree: [],
-        });
-      }
     }
   });
 

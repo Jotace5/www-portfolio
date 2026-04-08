@@ -67,6 +67,8 @@ npx tsx scripts/transform.ts \
 
 ## Adding a new project
 
+> **Note:** `projects.config.json` is the single source of truth for both the analysis pipeline and the frontend. Adding an entry here makes the project appear in the Projects section automatically — no need to edit any TypeScript constant.
+
 Edit `projects.config.json` at the project root:
 
 ```json
@@ -77,19 +79,25 @@ Edit `projects.config.json` at the project root:
     "sourceDir": "src",
     "languages": ["typescript"],
     "extensions": [".ts", ".tsx"],
-    "ignoreDependencies": []
+    "ignoreDependencies": [],
+    "frontend": {
+      "displayName": "My Project",
+      "order": 2
+    }
   }
 ]
 ```
 
 | Field | Description |
 |-------|-------------|
-| `name` | Unique ID — used as output filename (`{name}.json`) |
+| `name` | Unique ID — used as output filename (`{name}.json`) AND as the `repoName` reference in the frontend |
 | `repo` | GitHub repo in `owner/repo` format |
 | `sourceDir` | Directory to analyze: `"src"` for a src/ folder, `"."` for root |
 | `languages` | emerge language keys: `typescript`, `javascript`, `python`, `java`, `kotlin`, `swift`, `c`, `cpp`, `groovy`, `objc`, `ruby`, `go` |
 | `extensions` | File extensions to scan (include the dot) |
 | `ignoreDependencies` | Import strings to exclude from the graph (e.g., `["java.util"]`) |
+| `frontend.displayName` | Label shown on the selector button in the portfolio |
+| `frontend.order` | Display order in the selector (lower = first) |
 
 Then run the pipeline:
 

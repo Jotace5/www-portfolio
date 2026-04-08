@@ -13,8 +13,6 @@ export function ProjectSelector({ projects, activeIndex, onSelect }: ProjectSele
     <div className="flex flex-row flex-wrap gap-3">
       {projects.map((project, index) => {
         const isActive = index === activeIndex;
-        const isComingSoon = project.status === "coming-soon";
-        
         return (
           <button
             key={project.repoName}
@@ -28,7 +26,6 @@ export function ProjectSelector({ projects, activeIndex, onSelect }: ProjectSele
             `}
           >
             {project.displayName}
-            {isComingSoon && <span className="ml-1 opacity-70">✦</span>}
           </button>
         );
       })}

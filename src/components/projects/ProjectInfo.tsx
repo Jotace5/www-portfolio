@@ -42,42 +42,6 @@ function getRelativeTime(dateString: string): string {
 }
 
 export function ProjectInfo({ project }: ProjectInfoProps) {
-  if (project.status === "coming-soon") {
-    const config = FEATURED_PROJECTS.find(p => p.repoName === project.repoName);
-    const description = config?.comingSoonDescription || "More info coming soon.";
-    const techTags = config?.comingSoonTech || [];
-
-    return (
-      <div className="flex flex-col h-full justify-center">
-        <div className="flex items-center gap-3">
-          <h3 className="font-(family-name:--font-Doto) text-2xl text-black">
-            {project.displayName}
-          </h3>
-          <span className="text-xs bg-[#4A90D9]/10 text-[#4A90D9] px-2 py-0.5 rounded-full">
-            Coming Soon
-          </span>
-        </div>
-        <p className="font-(family-name:--font-antic) text-[#1A1A2E] mt-2">
-          {description}
-        </p>
-        
-        {techTags.length > 0 && (
-          <div className="flex flex-wrap gap-2 mt-3">
-            {techTags.map(tech => (
-              <span 
-                key={tech} 
-                className="text-xs px-2 py-0.5 rounded-full border border-[#4A90D9]/20 text-[#4A90D9]"
-              >
-                {tech}
-              </span>
-            ))}
-          </div>
-        )}
-      </div>
-    );
-  }
-
-  // Available state
   if (!project.metadata) return null;
 
   const { metadata, languages, fileTree } = project;
