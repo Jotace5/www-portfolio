@@ -109,7 +109,6 @@ export async function GET(request: NextRequest) {
     }
 
     const projectData: ProjectData = {
-      status: "available",
       repoName: repo,
       displayName: rawMeta.name, // Will be overridden by client if necessary
       metadata,

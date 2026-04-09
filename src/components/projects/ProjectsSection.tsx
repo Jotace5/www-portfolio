@@ -5,7 +5,17 @@ import { fetchAllProjects } from "@/lib/github";
 import type { ProjectData } from "@/lib/types/github";
 import { ProjectSelector } from "./ProjectSelector";
 import { ProjectInfo } from "./ProjectInfo";
-import { ProjectGraph } from "./ProjectGraph";
+import dynamic from 'next/dynamic';
+
+const ProjectGraph = dynamic(
+  () => import('./ProjectGraph').then((m) => m.ProjectGraph),
+  {
+    ssr: false,
+    loading: () => (
+      <div className="w-full h-150 rounded-xl bg-[#0a0a0f] animate-pulse" />
+    ),
+  }
+);
 
 export function ProjectsSection() {
   const [projects, setProjects] = useState<ProjectData[]>([]);
@@ -53,8 +63,7 @@ export function ProjectsSection() {
         activeIndex={activeIndex} 
         onSelect={setActiveIndex} 
       />
-      
-      <div className="grid grid-cols-1 md:grid-cols-[1fr_0.7fr] gap-8 mt-8">
+      <div className="flex flex-col gap-8 mt-8">
         <ProjectInfo project={activeProject} />
         <ProjectGraph project={activeProject} />
       </div>

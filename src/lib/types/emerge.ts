@@ -58,6 +58,11 @@ export interface VizNode {
     size: number;
     heat: number;
   };
+  position: {
+    x: number;
+    y: number;
+    z: number;
+  };
   cluster: {
     id: number;
     label: string;

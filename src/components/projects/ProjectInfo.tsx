@@ -1,7 +1,6 @@
 'use client';
 
 import type { ProjectData } from "@/lib/types/github";
-import { FEATURED_PROJECTS } from "@/lib/constants/projects";
 
 interface ProjectInfoProps {
   project: ProjectData;
