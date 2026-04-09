@@ -28,7 +28,6 @@ export interface FileTreeEntry {
 
 /** Consolidated project data returned by our API route */
 export interface ProjectData {
-  status: "available";
   repoName: string;
   displayName: string;
   metadata: RepoMetadata | null;

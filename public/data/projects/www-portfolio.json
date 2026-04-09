@@ -1,11 +1,11 @@
 {
   "meta": {
     "name": "www-portfolio",
-    "analyzedAt": "2026-04-07T20:42:23.762Z",
+    "analyzedAt": "2026-04-08T20:57:04.125Z",
     "emergeVersion": "2.0.7",
-    "totalFiles": 16,
+    "totalFiles": 17,
     "totalDirectories": 9,
-    "totalSloc": 936,
+    "totalSloc": 989,
     "totalEdges": 22
   },
   "nodes": [
@@ -22,21 +22,21 @@
         "fanOut": 2
       },
       "normalized": {
-        "size": 0.610021761498691,
-        "heat": 0.3213793103448276
+        "size": 0.6533156004018278,
+        "heat": 0.36172413793103453
       },
       "position": {
-        "x": 83.10068040120525,
-        "y": -106.83592133201759,
-        "z": -15.692649438951793
+        "x": 68.50288954329409,
+        "y": 120.89364628273225,
+        "z": -110.58376751206586
       },
       "cluster": {
-        "id": 2,
+        "id": 5,
         "label": "app"
       },
       "tags": [
-        "children",
         "antic",
+        "children",
         "doto"
       ]
     },
@@ -53,16 +53,16 @@
         "fanOut": 2
       },
       "normalized": {
-        "size": 0.3262595103420191,
-        "heat": 0.22206896551724142
+        "size": 0.3494144657433831,
+        "heat": 0.23758620689655174
       },
       "position": {
-        "x": -31.993198832227034,
-        "y": 96.22548602374185,
-        "z": 8.12933638906536
+        "x": 43.426572060069496,
+        "y": -27.880976167588294,
+        "z": 32.29449995749197
       },
       "cluster": {
-        "id": 4,
+        "id": 8,
         "label": "app"
       },
       "tags": [
@@ -84,13 +84,13 @@
         "fanOut": 2
       },
       "normalized": {
-        "size": 0.9179598732703957,
-        "heat": 0.6151724137931034
+        "size": 0.9831083800634566,
+        "heat": 0.7289655172413794
       },
       "position": {
-        "x": -20.323324943080248,
-        "y": -36.71449308032413,
-        "z": 44.48511739685675
+        "x": -34.49264995168897,
+        "y": -2.197749994234197,
+        "z": -89.25935880084413
       },
       "cluster": {
         "id": 0,
@@ -115,13 +115,13 @@
         "fanOut": 1
       },
       "normalized": {
-        "size": 0.8583658531444726,
-        "heat": 0.4524137931034483
+        "size": 0.9192849142525411,
+        "heat": 0.5455172413793103
       },
       "position": {
-        "x": 24.17729287799371,
-        "y": 89.00361108510174,
-        "z": -36.71808929193325
+        "x": 17.92720178585891,
+        "y": -17.059903473844415,
+        "z": 83.99384115782001
       },
       "cluster": {
         "id": 1,
@@ -146,13 +146,13 @@
         "fanOut": 2
       },
       "normalized": {
-        "size": 0.892610200042695,
-        "heat": 0.5779310344827586
+        "size": 0.9559596158225583,
+        "heat": 0.6824137931034483
       },
       "position": {
-        "x": 74.08164588807315,
-        "y": 50.721155503662736,
-        "z": -77.66178202590397
+        "x": -31.794484254281382,
+        "y": 10.478616346145536,
+        "z": 115.80858780919262
       },
       "cluster": {
         "id": 1,
@@ -177,16 +177,16 @@
         "fanOut": 0
       },
       "normalized": {
-        "size": 0.610021761498691,
-        "heat": 0.16137931034482758
+        "size": 0.6533156004018278,
+        "heat": 0.20172413793103447
       },
       "position": {
-        "x": 52.65751835539625,
-        "y": -143.10782068536352,
-        "z": -26.530812334805347
+        "x": 113.1194745079723,
+        "y": 109.14638483316213,
+        "z": -95.69885638684913
       },
       "cluster": {
-        "id": 8,
+        "id": 6,
         "label": "layout"
       },
       "tags": [
@@ -208,16 +208,16 @@
         "fanOut": 0
       },
       "normalized": {
-        "size": 0.5512726187687177,
-        "heat": 0.13241379310344828
+        "size": 0.5903969737590181,
+        "heat": 0.16551724137931034
       },
       "position": {
-        "x": 110.95673486028373,
-        "y": -70.1553939697543,
-        "z": 1.557086707755106
+        "x": 22.662073521398323,
+        "y": 129.525930546545,
+        "z": -124.31962546012159
       },
       "cluster": {
-        "id": 5,
+        "id": 7,
         "label": "layout"
       },
       "tags": [
@@ -233,19 +233,19 @@
       "directory": "components/projects",
       "extension": ".tsx",
       "metrics": {
-        "sloc": 44,
+        "sloc": 43,
         "methods": 1,
         "fanIn": 1,
         "fanOut": 1
       },
       "normalized": {
-        "size": 0.6458451621973755,
-        "heat": 0.26206896551724135
+        "size": 0.6843695891752812,
+        "heat": 0.3024137931034483
       },
       "position": {
-        "x": -61.528488197638474,
-        "y": 34.10707526579628,
-        "z": 96.53994016524034
+        "x": -69.93159011209784,
+        "y": -41.23461131493001,
+        "z": -31.865490519042062
       },
       "cluster": {
         "id": 0,
@@ -263,19 +263,19 @@
       "directory": "components/projects",
       "extension": ".tsx",
       "metrics": {
-        "sloc": 145,
+        "sloc": 113,
         "methods": 2,
         "fanIn": 1,
         "fanOut": 2
       },
       "normalized": {
-        "size": 1,
-        "heat": 0.76
+        "size": 0.991666315727847,
+        "heat": 0.7444827586206897
       },
       "position": {
-        "x": -49.001070742665995,
-        "y": 30.022370621895007,
-        "z": 15.40941334281008
+        "x": 22.46085879438079,
+        "y": -58.4936709307765,
+        "z": -59.66851115209472
       },
       "cluster": {
         "id": 0,
@@ -283,8 +283,8 @@
       },
       "tags": [
         "span",
-        "div",
-        "diffindays"
+        "diffindays",
+        "div"
       ]
     },
     {
@@ -294,19 +294,19 @@
       "directory": "components/projects",
       "extension": ".tsx",
       "metrics": {
-        "sloc": 33,
+        "sloc": 31,
         "methods": 1,
         "fanIn": 1,
         "fanOut": 1
       },
       "normalized": {
-        "size": 0.5604110076185257,
-        "heat": 0.21655172413793106
+        "size": 0.5802992763510582,
+        "heat": 0.2403448275862069
       },
       "position": {
-        "x": -105.93636246991977,
-        "y": -6.035334007555228,
-        "z": 77.08071098986412
+        "x": -20.2427923870235,
+        "y": -7.3468443204321865,
+        "z": -1.8691785873301208
       },
       "cluster": {
         "id": 0,
@@ -331,13 +331,13 @@
         "fanOut": 5
       },
       "normalized": {
-        "size": 0.7066638199530372,
-        "heat": 0.623448275862069
+        "size": 0.756816439926067,
+        "heat": 0.6793103448275862
       },
       "position": {
-        "x": -77.65226510351675,
-        "y": 40.60306843136478,
-        "z": 47.34910368994169
+        "x": -4.3217428240155025,
+        "y": -48.60780763287169,
+        "z": -15.460315068348496
       },
       "cluster": {
         "id": 3,
@@ -362,13 +362,13 @@
         "fanOut": 1
       },
       "normalized": {
-        "size": 0.9337321213874143,
-        "heat": 0.56
+        "size": 1,
+        "heat": 0.6799999999999999
       },
       "position": {
-        "x": 91.38279478997792,
-        "y": 24.726346561918884,
-        "z": -119.60353719807283
+        "x": -61.39000128228125,
+        "y": 25.797253072096694,
+        "z": 151.58805709682088
       },
       "cluster": {
         "id": 1,
@@ -387,19 +387,19 @@
       "directory": "lib",
       "extension": ".ts",
       "metrics": {
-        "sloc": 54,
+        "sloc": 37,
         "methods": 2,
         "fanIn": 1,
         "fanOut": 2
       },
       "normalized": {
-        "size": 0.7066638199530372,
-        "heat": 0.383448275862069
+        "size": 0.6365722213223475,
+        "heat": 0.3513793103448276
       },
       "position": {
-        "x": -93.85650061004688,
-        "y": -1.4012960257102027,
-        "z": 11.848913184118352
+        "x": -24.746994985491433,
+        "y": -84.26668107933921,
+        "z": -51.70129653552083
       },
       "cluster": {
         "id": 0,
@@ -407,8 +407,8 @@
       },
       "tags": [
         "reponame",
-        "displayname",
-        "project"
+        "project",
+        "await"
       ]
     },
     {
@@ -425,15 +425,15 @@
       },
       "normalized": {
         "size": 0,
-        "heat": 0.020689655172413793
+        "heat": 0.02586206896551724
       },
       "position": {
-        "x": 114.38495883705177,
-        "y": 16.438540015114054,
-        "z": -87.18890097220421
+        "x": -67.24364167784096,
+        "y": 47.53342093304873,
+        "z": 117.23311258100381
       },
       "cluster": {
-        "id": 6,
+        "id": 10,
         "label": "lib"
       },
       "tags": [
@@ -449,28 +449,59 @@
       "directory": "lib/constants",
       "extension": ".ts",
       "metrics": {
-        "sloc": 22,
+        "sloc": 10,
         "methods": 0,
         "fanIn": 3,
         "fanOut": 1
       },
       "normalized": {
-        "size": 0.4399983297369411,
-        "heat": 0.1710344827586207
+        "size": 0.22045598276577508,
+        "heat": 0.1317241379310345
       },
       "position": {
-        "x": -47.609143629829035,
-        "y": -16.90592915747863,
-        "z": 9.749840837385293
+        "x": -13.759999356746466,
+        "y": -50.1875197783726,
+        "z": -89.7199610002249
       },
       "cluster": {
-        "id": 0,
-        "label": "projects"
+        "id": 9,
+        "label": "constants"
       },
       "tags": [
-        "order",
-        "displayname",
-        "reponame"
+        "projectsconfig",
+        "featuredproject",
+        "projectconfigentry"
+      ]
+    },
+    {
+      "id": "lib/types/emerge.ts",
+      "displayName": "emerge.ts",
+      "path": "lib/types/emerge.ts",
+      "directory": "lib/types",
+      "extension": ".ts",
+      "metrics": {
+        "sloc": 106,
+        "methods": 0,
+        "fanIn": 0,
+        "fanOut": 0
+      },
+      "normalized": {
+        "size": 0.9713273757108333,
+        "heat": 0.5482758620689655
+      },
+      "position": {
+        "x": 65.05272559041519,
+        "y": -70.16426175204192,
+        "z": 218.9474165544359
+      },
+      "cluster": {
+        "id": 2,
+        "label": "types"
+      },
+      "tags": [
+        "interface",
+        "edges",
+        "emergeedge"
       ]
     },
     {
@@ -480,28 +511,28 @@
       "directory": "lib/types",
       "extension": ".ts",
       "metrics": {
-        "sloc": 37,
+        "sloc": 48,
         "methods": 0,
         "fanIn": 7,
         "fanOut": 0
       },
       "normalized": {
-        "size": 0.5943879306316141,
-        "heat": 0.15310344827586206
+        "size": 0.719355456736626,
+        "heat": 0.2482758620689655
       },
       "position": {
-        "x": -62.84127148105761,
-        "y": -0.6914652503917451,
-        "z": 51.24630855883428
+        "x": -25.227898971921814,
+        "y": -35.93522556929926,
+        "z": -49.71915413432329
       },
       "cluster": {
-        "id": 7,
+        "id": 4,
         "label": "types"
       },
       "tags": [
         "interface",
         "bytes",
-        "iso"
+        "name"
       ]
     }
   ],
@@ -659,6 +690,10 @@
       },
       {
         "source": "lib/types",
+        "target": "lib/types/emerge.ts"
+      },
+      {
+        "source": "lib/types",
         "target": "lib/types/github.ts"
       },
       {
@@ -693,91 +728,111 @@
   },
   "clusters": [
     {
-      "id": 2,
-      "label": "app",
-      "nodeCount": 1,
-      "sloc": 39,
-      "slocPercent": 4.17,
-      "avgFanIn": 0.8,
-      "avgFanOut": 0.8,
-      "avgMethods": 0.2
-    },
-    {
-      "id": 4,
-      "label": "app",
-      "nodeCount": 1,
-      "sloc": 15,
-      "slocPercent": 1.6,
-      "avgFanIn": 0.67,
-      "avgFanOut": 0.67,
-      "avgMethods": 0.33
-    },
-    {
       "id": 0,
       "label": "projects",
-      "nodeCount": 6,
-      "sloc": 408,
-      "slocPercent": 43.59,
-      "avgFanIn": 1.22,
-      "avgFanOut": 1.11,
-      "avgMethods": 0.78
+      "nodeCount": 5,
+      "sloc": 334,
+      "slocPercent": 33.77,
+      "avgFanIn": 1.38,
+      "avgFanOut": 1.12,
+      "avgMethods": 0.88
     },
     {
       "id": 1,
       "label": "hero",
       "nodeCount": 3,
       "sloc": 307,
-      "slocPercent": 32.8,
+      "slocPercent": 31.04,
       "avgFanIn": 1.14,
       "avgFanOut": 1,
       "avgMethods": 0.43
     },
     {
-      "id": 8,
-      "label": "layout",
+      "id": 2,
+      "label": "types",
       "nodeCount": 1,
-      "sloc": 39,
-      "slocPercent": 4.17,
+      "sloc": 106,
+      "slocPercent": 10.72,
       "avgFanIn": 0,
       "avgFanOut": 0,
-      "avgMethods": 1
-    },
-    {
-      "id": 5,
-      "label": "layout",
-      "nodeCount": 1,
-      "sloc": 32,
-      "slocPercent": 3.42,
-      "avgFanIn": 0.5,
-      "avgFanOut": 0.5,
-      "avgMethods": 0.5
+      "avgMethods": 0
     },
     {
       "id": 3,
       "label": "projects",
       "nodeCount": 1,
       "sloc": 54,
-      "slocPercent": 5.77,
+      "slocPercent": 5.46,
       "avgFanIn": 0.8,
       "avgFanOut": 1.2,
       "avgMethods": 0.4
     },
     {
-      "id": 6,
-      "label": "lib",
+      "id": 4,
+      "label": "types",
       "nodeCount": 1,
-      "sloc": 5,
-      "slocPercent": 0.53,
+      "sloc": 48,
+      "slocPercent": 4.85,
       "avgFanIn": 0,
       "avgFanOut": 0,
       "avgMethods": 0
     },
     {
-      "id": 7,
-      "label": "types",
+      "id": 5,
+      "label": "app",
       "nodeCount": 1,
-      "sloc": 37,
-      "slocPercent": 3.95,
+      "sloc": 39,
+      "slocPercent": 3.94,
+      "avgFanIn": 0.8,
+      "avgFanOut": 0.8,
+      "avgMethods": 0.2
+    },
+    {
+      "id": 6,
+      "label": "layout",
+      "nodeCount": 1,
+      "sloc": 39,
+      "slocPercent": 3.94,
+      "avgFanIn": 0,
+      "avgFanOut": 0,
+      "avgMethods": 1
+    },
+    {
+      "id": 7,
+      "label": "layout",
+      "nodeCount": 1,
+      "sloc": 32,
+      "slocPercent": 3.24,
+      "avgFanIn": 0.5,
+      "avgFanOut": 0.5,
+      "avgMethods": 0.5
+    },
+    {
+      "id": 8,
+      "label": "app",
+      "nodeCount": 1,
+      "sloc": 15,
+      "slocPercent": 1.52,
+      "avgFanIn": 0.67,
+      "avgFanOut": 0.67,
+      "avgMethods": 0.33
+    },
+    {
+      "id": 9,
+      "label": "constants",
+      "nodeCount": 1,
+      "sloc": 10,
+      "slocPercent": 1.01,
+      "avgFanIn": 0.5,
+      "avgFanOut": 1,
+      "avgMethods": 0
+    },
+    {
+      "id": 10,
+      "label": "lib",
+      "nodeCount": 1,
+      "sloc": 5,
+      "slocPercent": 0.51,
       "avgFanIn": 0,
       "avgFanOut": 0,
       "avgMethods": 0
@@ -860,6 +915,7 @@
             "id": "lib/types",
             "displayName": "types",
             "children": [
+              "lib/types/emerge.ts",
               "lib/types/github.ts"
             ]
           },
@@ -878,11 +934,11 @@
       "value": 6,
       "file": "components/projects/ProjectsSection.tsx"
     },
-    "avgSloc": 58.5,
-    "avgFanIn": 0.88,
-    "avgFanOut": 0.88,
-    "avgMethods": 1,
-    "louvainCommunities": 9,
-    "louvainModularity": 0.7
+    "avgSloc": 58.18,
+    "avgFanIn": 0.86,
+    "avgFanOut": 0.86,
+    "avgMethods": 0.94,
+    "louvainCommunities": 11,
+    "louvainModularity": 0.69
   }
 }

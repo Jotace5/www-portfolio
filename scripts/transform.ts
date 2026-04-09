@@ -512,6 +512,29 @@ for (const [cId, c] of clusterMap.entries()) {
     }
 }
 
+// Rank clusters by sloc
+const sortedClusters = Array.from(clusterMap.values())
+  .sort((a, b) => b.sloc - a.sloc);
+
+const idRemap = new Map<number, number>();
+sortedClusters.forEach((cluster, newId) => {
+  idRemap.set(cluster.id, newId);
+});
+
+for (const cluster of sortedClusters) {
+  cluster.id = idRemap.get(cluster.id)!;
+}
+
+for (const node of cleanNodes) {
+  const oldId = node.cluster.id;
+  node.cluster.id = idRemap.get(oldId)!;
+}
+
+clusterMap.clear();
+for (const cluster of sortedClusters) {
+  clusterMap.set(cluster.id, cluster);
+}
+
 // 14. Build stats
 const ov = metricsData['overall-metrics'] || {};
 let maxFanInFileOrig = ov['max-fan-in-name-dependency-graph'] || '';
