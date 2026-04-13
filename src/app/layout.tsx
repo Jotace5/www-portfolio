@@ -18,6 +18,13 @@ const doto = Doto({
 export const metadata: Metadata = {
   title: "JC — Portfolio",
   description: "Jotace's personal portfolio",
+  alternates: {
+    types: {
+      "application/rss+xml": [
+        { url: "/feed.xml", title: "Juance — Blog RSS" },
+      ],
+    },
+  },
 };
 
 export default function RootLayout({

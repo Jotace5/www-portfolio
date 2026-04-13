@@ -1,5 +1,6 @@
 import { HeroSection } from "@/components/hero/HeroSection";
 import { ProjectsSection } from '@/components/projects/ProjectsSection';
+import { RecentPosts } from "@/components/home/RecentPosts";
 
 export default function Home() {
   return (
@@ -11,6 +12,9 @@ export default function Home() {
           Projects
         </h2>
         <ProjectsSection />
+      </section>
+      <section id="writing" className="mt-20">
+        <RecentPosts />
       </section>
     </div>
   );

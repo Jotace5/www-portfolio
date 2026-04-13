@@ -9,9 +9,13 @@
     "lint": "eslint"
   },
   "dependencies": {
+    "gray-matter": "^4.0.3",
     "next": "16.1.7",
+    "next-mdx-remote": "^6.0.0",
     "react": "19.2.4",
     "react-dom": "19.2.4",
+    "rehype-pretty-code": "^0.14.3",
+    "shiki": "^4.0.2",
     "three": "^0.183.2"
   },
   "devDependencies": {
