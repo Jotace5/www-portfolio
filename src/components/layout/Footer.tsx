@@ -1,6 +1,10 @@
 'use client';
 
-export function Footer() {
+interface FooterProps {
+  onOpenContact?: () => void;
+}
+
+export function Footer({ onOpenContact }: FooterProps) {
   const currentYear = new Date().getFullYear();
 
   return (
@@ -34,7 +38,7 @@ export function Footer() {
           </a>
           <button
             type="button"
-            onClick={() => console.log('Contact modal trigger clicked — will open modal in feat/contact-form')}
+            onClick={() => onOpenContact?.()}
             className="font-(family-name:--font-antic) text-[#1A1A2E] hover:text-[#4A90D9] transition-colors cursor-pointer bg-transparent border-none p-0"
           >
             Send a message
