@@ -65,7 +65,7 @@ export function HeroSection() {
           continuousJitter
           jitterRate={0.050}
           scrambleRef={titleScrambleRef}
-          className="font-(family-name:--font-doto) text-4xl sm:text-5xl md:text-6xl font-semibold tracking-wide text-black leading-tight"
+          className="font-(family-name:--font-doto) text-3xl sm:text-4xl md:text-5xl font-semibold tracking-wide text-black leading-tight"
         />
       </div>
 
@@ -79,7 +79,7 @@ export function HeroSection() {
           autoStart
           startDelay={1200}
           scrambleRef={subtitleScrambleRef}
-          className="font-(family-name:--font-doto) text-lg sm:text-xl md:text-2xl text-black font-medium"
+          className="font-(family-name:--font-doto) text-base sm:text-lg md:text-xl text-black font-bold"
         />
       </div>
 

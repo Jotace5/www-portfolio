@@ -13,10 +13,12 @@ export default function Home() {
       </section>
       {/* Projects Section */}
       <section id="projects" className="mt-20">
-        <h2 className="font-(family-name:--font-doto) text-3xl text-black mb-8">
-          Projects
-        </h2>
-        <ProjectsSection />
+        <div className="max-w-3xl mx-auto">
+          <h2 className="font-(family-name:--font-doto) text-3xl text-black mb-8">
+            Projects
+          </h2>
+          <ProjectsSection />
+        </div>
       </section>
     </div>
   );
