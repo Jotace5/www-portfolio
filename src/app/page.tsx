@@ -6,15 +6,15 @@ export default function Home() {
   return (
     <div>
       <HeroSection />
+      <section id="writing" className="mt-16">
+        <RecentPosts />
+      </section>
       {/* Projects Section */}
       <section id="projects" className="mt-20">
         <h2 className="font-(family-name:--font-doto) text-3xl text-black mb-8">
           Projects
         </h2>
         <ProjectsSection />
-      </section>
-      <section id="writing" className="mt-20">
-        <RecentPosts />
       </section>
     </div>
   );

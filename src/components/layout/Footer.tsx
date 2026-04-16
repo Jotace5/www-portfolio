@@ -1,17 +1,4 @@
-const socialLinks = [
-  {
-    href: "https://github.com/Jotace5",
-    label: "GitHub",
-  },
-  {
-    href: "https://linkedin.com/in/juancastanop",
-    label: "LinkedIn",
-  },
-  {
-    href: "mailto:juancastap@gmail.com",
-    label: "Email",
-  },
-];
+'use client';
 
 export function Footer() {
   const currentYear = new Date().getFullYear();
@@ -22,18 +9,36 @@ export function Footer() {
         <p className="font-(family-name:--font-antic) text-[#1A1A2E]/60">
           &copy; {currentYear} Jotace
         </p>
-        <div className="flex items-center gap-6">
-          {socialLinks.map((link) => (
-            <a
-              key={link.href}
-              href={link.href}
-              target="_blank"
-              rel="noopener noreferrer"
-              className="font-(family-name:--font-antic) text-sm text-[#1A1A2E]/60 hover:text-[#4A90D9] transition-colors"
-            >
-              {link.label}
-            </a>
-          ))}
+        <div className="flex flex-col sm:flex-row items-center gap-6 flex-wrap justify-center">
+          <a
+            href="mailto:juancastap@gmail.com"
+            className="font-(family-name:--font-antic) text-[#1A1A2E] hover:text-[#4A90D9] transition-colors"
+          >
+            Email
+          </a>
+          <a
+            href="https://github.com/Jotace5"
+            target="_blank"
+            rel="noopener noreferrer"
+            className="font-(family-name:--font-antic) text-[#1A1A2E] hover:text-[#4A90D9] transition-colors"
+          >
+            GitHub
+          </a>
+          <a
+            href="https://www.linkedin.com/in/juancastanop/"
+            target="_blank"
+            rel="noopener noreferrer"
+            className="font-(family-name:--font-antic) text-[#1A1A2E] hover:text-[#4A90D9] transition-colors"
+          >
+            LinkedIn
+          </a>
+          <button
+            type="button"
+            onClick={() => console.log('Contact modal trigger clicked — will open modal in feat/contact-form')}
+            className="font-(family-name:--font-antic) text-[#1A1A2E] hover:text-[#4A90D9] transition-colors cursor-pointer bg-transparent border-none p-0"
+          >
+            Send a message
+          </button>
         </div>
       </div>
     </footer>

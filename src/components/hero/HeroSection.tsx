@@ -5,7 +5,7 @@ import { ScrambleText } from './ScrambleText';
 
 const TITLE_TEXT = "Hi, I'm Juan";
 
-const BODY_TEXT = `Former architect who spent 12 years designing and building things, until what started as experimentation became the path forward. That drive got me into a small-team US startup where we built a full conversational AI platform from zero – voice pipelines, new channels integration, LLM systems, and event-driven architectures on Cloud Services. I designed features end-to-end, put them into production, and learned to think in reliable systems built to scale. No CS degree (for now) – just own motivation, work and a mind full of curiosity.`;
+const BODY_TEXT = `Former architect who spent about a decade designing and building things, until what started as experimentation became the path forward. That drive got me into a small-team US startup where we built a full conversational AI platform from zero – voice pipelines, new channels integration, LLM systems, and event-driven architectures on Cloud Services. I designed features end-to-end, put them into production, and learned to think in reliable systems built to scale.`;
 
 const CLOSING_TEXT = `Today, I'm still designing and building things – just with different tools.`;
 
@@ -47,7 +47,7 @@ export function HeroSection() {
   }, []);
 
   return (
-    <section ref={sectionRef} className="flex flex-col items-center justify-center pt-24 pb-16 px-4 max-w-4xl mx-auto min-h-[60vh]">
+    <section ref={sectionRef} className="flex flex-col items-center justify-center pt-12 pb-8 px-4 max-w-4xl mx-auto min-h-[20vh]">
       {/* Título — Doto */}
       <div className="mb-7 text-center">
         <ScrambleText
