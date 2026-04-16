@@ -84,9 +84,23 @@ export const ContactModal: React.FC<ContactModalProps> = ({ isOpen, onClose }) =
   if (!mounted) return null;
   if (!isOpen) return null;
 
-  async function mockSubmit(data: ContactFormData): Promise<ContactApiResponse> {
-    await new Promise((resolve) => setTimeout(resolve, 1500));
-    return { success: true, message: 'Message sent successfully' };
+  async function handleSubmit(data: ContactFormData): Promise<ContactApiResponse> {
+    const response = await fetch('/api/contact', {
+      method: 'POST',
+      headers: { 'Content-Type': 'application/json' },
+      body: JSON.stringify(data),
+    });
+
+    const result = await response.json();
+
+    if (!response.ok) {
+      return {
+        success: false,
+        message: result.message || 'Something went wrong. Please try again.',
+      };
+    }
+
+    return result;
   }
 
   return createPortal(
@@ -105,7 +119,7 @@ export const ContactModal: React.FC<ContactModalProps> = ({ isOpen, onClose }) =
         className="relative bg-white rounded-2xl p-8 shadow-xl w-full max-w-md mx-auto animate-[scale-in_200ms_ease-out_forwards]"
       >
         <div className="flex items-center justify-between mb-6">
-          <h2 id="contact-modal-title" className="font-(family-name:--font-doto) text-xl text-black">
+          <h2 id="contact-modal-title" className="text-black font-bold font-(family-name:--font-doto) text-xl" style={{ WebkitFontSmoothing: 'none', color: 'black' }}>
             Get in touch
           </h2>
           <button
@@ -121,7 +135,7 @@ export const ContactModal: React.FC<ContactModalProps> = ({ isOpen, onClose }) =
           </button>
         </div>
 
-        <ContactForm onSubmit={mockSubmit} onSuccess={onClose} />
+        <ContactForm onSubmit={handleSubmit} onSuccess={onClose} />
         
         <style>{`
           @keyframes fade-in {
