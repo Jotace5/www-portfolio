@@ -5,21 +5,25 @@ import { ScrambleText } from './ScrambleText';
 
 const TITLE_TEXT = "Hi, I'm Juan";
 
-const BODY_TEXT = `Former architect who spent about a decade designing and building things, until what started as experimentation became the path forward. That drive got me into a small-team US startup where we built a full conversational AI platform from zero – voice pipelines, new channels integration, LLM systems, and event-driven architectures on Cloud Services. I designed features end-to-end, put them into production, and learned to think in reliable systems built to scale.`;
+const SUBTITLE_TEXT = "Software engineer based in Buenos Aires, Argentina.";
+
+const BODY_TEXT = `Former architect who spent about a decade designing and building things, until what started as experimentation became the path forward. That career trained me to connect systems from completely different disciplines and to think from the perspective of the person who will actually use what I build. I bring that same instinct to software – most recently at a small-team US startup where we built a conversational AI platform for customer service from zero, handling 3,000 conversations a day across voice, WhatsApp, and web. I designed and owned features end-to-end, from problem to architecture to production.`;
 
 const CLOSING_TEXT = `Today, I'm still designing and building things – just with different tools.`;
 
 export function HeroSection() {
   const sectionRef = useRef<HTMLElement>(null);
   const titleScrambleRef = useRef<((delayMs?: number) => void) | null>(null);
+  const subtitleScrambleRef = useRef<((delayMs?: number) => void) | null>(null);
   const bodyScrambleRef = useRef<((delayMs?: number) => void) | null>(null);
   const closingScrambleRef = useRef<((delayMs?: number) => void) | null>(null);
   const wasVisible = useRef(true);
 
   const handleReplay = () => {
     titleScrambleRef.current?.(0);
-    bodyScrambleRef.current?.(1200); 
-    closingScrambleRef.current?.(1200 + 4900); // Wait title (1.2s) + body (4.9s)
+    subtitleScrambleRef.current?.(1200);
+    bodyScrambleRef.current?.(2200); 
+    closingScrambleRef.current?.(5500);
   };
 
   useEffect(() => {
@@ -28,6 +32,7 @@ export function HeroSection() {
         const entry = entries[0];
         
         if (entry.isIntersecting && !wasVisible.current) {
+          subtitleScrambleRef.current?.(0);
           bodyScrambleRef.current?.(0);
           closingScrambleRef.current?.(8 * BODY_TEXT.length + 1000);
         }
@@ -47,9 +52,9 @@ export function HeroSection() {
   }, []);
 
   return (
-    <section ref={sectionRef} className="flex flex-col items-center justify-center pt-12 pb-8 px-4 max-w-4xl mx-auto min-h-[20vh]">
+    <section ref={sectionRef} className="flex flex-col items-center justify-center pt-12 pb-8 px-4 max-w-3xl mx-auto min-h-[20vh]">
       {/* Título — Doto */}
-      <div className="mb-7 text-center">
+      <div className="text-center">
         <ScrambleText
           text={TITLE_TEXT}
           charset="circuit"
@@ -64,6 +69,20 @@ export function HeroSection() {
         />
       </div>
 
+      {/* Subtitle — Doto */}
+      <div className="text-center mt-3 sm:mt-4 mb-7">
+        <ScrambleText
+          text={SUBTITLE_TEXT}
+          charset="alphanumeric"
+          scrambleDuration={1000}
+          staggerPerChar={8}
+          autoStart
+          startDelay={1200}
+          scrambleRef={subtitleScrambleRef}
+          className="font-(family-name:--font-doto) text-lg sm:text-xl md:text-2xl text-black font-medium"
+        />
+      </div>
+
       {/* Body — Antic */}
       <div className="text-center">
         <ScrambleText
@@ -72,7 +91,7 @@ export function HeroSection() {
           scrambleDuration={1000}
           staggerPerChar={8}
           autoStart
-          startDelay={1000}
+          startDelay={2200}
           scrambleRef={bodyScrambleRef}
           className="font-(family-name:--font-antic) text-sm sm:text-base md:text-lg text-[#1A1A2E] leading-relaxed"
         />
@@ -86,7 +105,7 @@ export function HeroSection() {
           scrambleDuration={1000}
           staggerPerChar={8}
           autoStart
-          startDelay={5912}
+          startDelay={5500}
           scrambleRef={closingScrambleRef}
           className="font-(family-name:--font-antic) text-sm sm:text-base md:text-lg text-[#1A1A2E] leading-relaxed"
         />

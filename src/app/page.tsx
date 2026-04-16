@@ -7,7 +7,9 @@ export default function Home() {
     <div>
       <HeroSection />
       <section id="writing" className="mt-16">
-        <RecentPosts />
+        <div className="max-w-3xl mx-auto">
+          <RecentPosts />
+        </div>
       </section>
       {/* Projects Section */}
       <section id="projects" className="mt-20">
