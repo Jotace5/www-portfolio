@@ -7,14 +7,18 @@ export default function Home() {
     <div>
       <HeroSection />
       <section id="writing" className="mt-16">
-        <RecentPosts />
+        <div className="max-w-3xl mx-auto">
+          <RecentPosts />
+        </div>
       </section>
       {/* Projects Section */}
       <section id="projects" className="mt-20">
-        <h2 className="font-(family-name:--font-doto) text-3xl text-black mb-8">
-          Projects
-        </h2>
-        <ProjectsSection />
+        <div className="max-w-3xl mx-auto">
+          <h2 className="font-(family-name:--font-doto) text-3xl text-black mb-8">
+            Projects
+          </h2>
+          <ProjectsSection />
+        </div>
       </section>
     </div>
   );
