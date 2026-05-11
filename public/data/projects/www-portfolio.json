@@ -1,14 +1,107 @@
 {
   "meta": {
     "name": "www-portfolio",
-    "analyzedAt": "2026-04-13T06:56:06.627Z",
+    "analyzedAt": "2026-05-11T07:26:52.319Z",
     "emergeVersion": "2.0.7",
-    "totalFiles": 19,
-    "totalDirectories": 9,
-    "totalSloc": 2000,
-    "totalEdges": 25
+    "totalFiles": 33,
+    "totalDirectories": 16,
+    "totalSloc": 2824,
+    "totalEdges": 42
   },
   "nodes": [
+    {
+      "id": "components/contact/ContactModal.tsx",
+      "displayName": "ContactModal.tsx",
+      "path": "components/contact/ContactModal.tsx",
+      "directory": "components/contact",
+      "extension": ".tsx",
+      "metrics": {
+        "sloc": 131,
+        "methods": 1,
+        "fanIn": 1,
+        "fanOut": 2
+      },
+      "normalized": {
+        "size": 0.6768260939177486,
+        "heat": 0.3261637239165329
+      },
+      "position": {
+        "x": 139.72378942525793,
+        "y": -41.463245185762176,
+        "z": -1.7760655466444506
+      },
+      "cluster": {
+        "id": 2,
+        "label": "contact"
+      },
+      "tags": [
+        "isopen",
+        "onclose",
+        "not"
+      ]
+    },
+    {
+      "id": "lib/types/contact.ts",
+      "displayName": "contact.ts",
+      "path": "lib/types/contact.ts",
+      "directory": "lib/types",
+      "extension": ".ts",
+      "metrics": {
+        "sloc": 16,
+        "methods": 0,
+        "fanIn": 2,
+        "fanOut": 0
+      },
+      "normalized": {
+        "size": 0.2410620992601344,
+        "heat": 0.015409309791332263
+      },
+      "position": {
+        "x": 141.7891384473218,
+        "y": -39.9530417390922,
+        "z": 58.45347785560264
+      },
+      "cluster": {
+        "id": 2,
+        "label": "contact"
+      },
+      "tags": [
+        "message",
+        "email",
+        "interface"
+      ]
+    },
+    {
+      "id": "components/contact/ContactForm.tsx",
+      "displayName": "ContactForm.tsx",
+      "path": "components/contact/ContactForm.tsx",
+      "directory": "components/contact",
+      "extension": ".tsx",
+      "metrics": {
+        "sloc": 204,
+        "methods": 0,
+        "fanIn": 1,
+        "fanOut": 1
+      },
+      "normalized": {
+        "size": 0.7686214723802886,
+        "heat": 0.29646869983948637
+      },
+      "position": {
+        "x": 167.2414063576399,
+        "y": -13.403997439486186,
+        "z": 41.955485697506994
+      },
+      "cluster": {
+        "id": 2,
+        "label": "contact"
+      },
+      "tags": [
+        "focus",
+        "isloading",
+        "seterrors"
+      ]
+    },
     {
       "id": "components/projects/ProjectsSection.tsx",
       "displayName": "ProjectsSection.tsx",
@@ -26,17 +119,17 @@
         "heat": 0.4606741573033708
       },
       "position": {
-        "x": -6.754196746738246,
-        "y": -56.14003571912493,
-        "z": 27.71674001572402
+        "x": -32.261183680715085,
+        "y": 16.82434678370418,
+        "z": -25.300825872019058
       },
       "cluster": {
-        "id": 3,
+        "id": 1,
         "label": "projects"
       },
       "tags": [
-        "usestate",
         "loading",
+        "usestate",
         "activeproject"
       ]
     },
@@ -57,9 +150,9 @@
         "heat": 0.23563402889245588
       },
       "position": {
-        "x": -7.301976302276899,
-        "y": -69.35247355951397,
-        "z": 89.45218266465028
+        "x": -6.87907473867099,
+        "y": 69.36684378638638,
+        "z": -48.831625202833564
       },
       "cluster": {
         "id": 1,
@@ -68,7 +161,7 @@
       "tags": [
         "reponame",
         "project",
-        "await"
+        "projectdata"
       ]
     },
     {
@@ -88,9 +181,9 @@
         "heat": 0.04526484751203852
       },
       "position": {
-        "x": -35.18957693527811,
-        "y": -49.05174316719409,
-        "z": 60.70288028385359
+        "x": -9.047083265539786,
+        "y": 32.69728900231993,
+        "z": -77.58829407383328
       },
       "cluster": {
         "id": 1,
@@ -99,7 +192,7 @@
       "tags": [
         "interface",
         "bytes",
-        "name"
+        "displayname"
       ]
     },
     {
@@ -119,9 +212,9 @@
         "heat": 0.7486356340288924
       },
       "position": {
-        "x": -31.65999442142964,
-        "y": 64.21766853753046,
-        "z": 34.24663080042186
+        "x": -63.50331064653848,
+        "y": -37.92410031126263,
+        "z": -126.3485794934767
       },
       "cluster": {
         "id": 0,
@@ -150,9 +243,9 @@
         "heat": 0.8
       },
       "position": {
-        "x": -28.946527170495028,
-        "y": 116.83005117347184,
-        "z": 21.306887589859933
+        "x": -94.18216753426171,
+        "y": -72.65684498387648,
+        "z": -148.6151007738554
       },
       "cluster": {
         "id": 0,
@@ -160,8 +253,8 @@
       },
       "tags": [
         "useref",
-        "map",
-        "color"
+        "color",
+        "map"
       ]
     },
     {
@@ -181,9 +274,9 @@
         "heat": 0.10690208667736757
       },
       "position": {
-        "x": 10.30010217466809,
-        "y": 106.14574154264392,
-        "z": 34.41138669064377
+        "x": -108.73605688245185,
+        "y": -32.882365085518444,
+        "z": -154.58825879519773
       },
       "cluster": {
         "id": 0,
@@ -212,9 +305,9 @@
         "heat": 0.055858747993579455
       },
       "position": {
-        "x": -66.28056919863187,
-        "y": 103.7033512236577,
-        "z": 6.113147864342343
+        "x": -64.60947332239158,
+        "y": -96.53691570330456,
+        "z": -130.44668197757323
       },
       "cluster": {
         "id": 0,
@@ -243,9 +336,9 @@
         "heat": 0.20786516853932585
       },
       "position": {
-        "x": -53.25663000306871,
-        "y": -70.93626741914332,
-        "z": 14.075937551468739
+        "x": -59.2103708637321,
+        "y": 43.27190545137281,
+        "z": -65.42481195248956
       },
       "cluster": {
         "id": 1,
@@ -254,7 +347,7 @@
       "tags": [
         "span",
         "diffindays",
-        "div"
+        "diffinhours"
       ]
     },
     {
@@ -274,9 +367,9 @@
         "heat": 0.12985553772070627
       },
       "position": {
-        "x": 19.643677284786666,
-        "y": -87.86562125574314,
-        "z": 46.70021840680189
+        "x": -8.681571298212493,
+        "y": -15.046651793961464,
+        "z": -48.1890347222407
       },
       "cluster": {
         "id": 1,
@@ -295,28 +388,59 @@
       "directory": "components/layout",
       "extension": ".tsx",
       "metrics": {
-        "sloc": 39,
+        "sloc": 47,
         "methods": 1,
         "fanIn": 1,
         "fanOut": 0
       },
       "normalized": {
-        "size": 0.4257155436855503,
-        "heat": 0.0375601926163724
+        "size": 0.46438533763272277,
+        "heat": 0.04526484751203852
       },
       "position": {
-        "x": 21.913010047842278,
-        "y": -133.3466080936437,
-        "z": -97.46601886549787
+        "x": 63.420327551351704,
+        "y": -58.38316043891843,
+        "z": -160.3134906466586
       },
       "cluster": {
-        "id": 4,
+        "id": 9,
         "label": "layout"
       },
       "tags": [
-        "href",
-        "label",
+        "onopencontact",
+        "hover",
         "currentyear"
+      ]
+    },
+    {
+      "id": "components/layout/LayoutShell.tsx",
+      "displayName": "LayoutShell.tsx",
+      "path": "components/layout/LayoutShell.tsx",
+      "directory": "components/layout",
+      "extension": ".tsx",
+      "metrics": {
+        "sloc": 24,
+        "methods": 1,
+        "fanIn": 1,
+        "fanOut": 3
+      },
+      "normalized": {
+        "size": 0.3250944270660364,
+        "heat": 0.32311396468699843
+      },
+      "position": {
+        "x": 106.36633024374808,
+        "y": -65.90444690593226,
+        "z": -97.67433282938318
+      },
+      "cluster": {
+        "id": 11,
+        "label": "layout"
+      },
+      "tags": [
+        "setiscontactopen",
+        "children",
+        "iscontactopen"
       ]
     },
     {
@@ -326,28 +450,214 @@
       "directory": "components/layout",
       "extension": ".tsx",
       "metrics": {
-        "sloc": 32,
+        "sloc": 41,
         "methods": 1,
         "fanIn": 1,
         "fanOut": 0
       },
       "normalized": {
-        "size": 0.38471631248287086,
-        "heat": 0.030818619582664526
+        "size": 0.43608016439249386,
+        "heat": 0.03948635634028892
       },
       "position": {
-        "x": 89.48446869569842,
-        "y": -78.17173595230264,
-        "z": -25.042566212870465
+        "x": 100.20840538937094,
+        "y": -112.06522224563065,
+        "z": -71.74866356682413
       },
       "cluster": {
-        "id": 6,
+        "id": 4,
         "label": "layout"
       },
       "tags": [
-        "href",
         "link",
-        "label"
+        "href",
+        "onopencontact"
+      ]
+    },
+    {
+      "id": "components/home/RecentPosts.tsx",
+      "displayName": "RecentPosts.tsx",
+      "path": "components/home/RecentPosts.tsx",
+      "directory": "components/home",
+      "extension": ".tsx",
+      "metrics": {
+        "sloc": 32,
+        "methods": 1,
+        "fanIn": 1,
+        "fanOut": 2
+      },
+      "normalized": {
+        "size": 0.38471631248287086,
+        "heat": 0.23081861958266453
+      },
+      "position": {
+        "x": -14.00452390797642,
+        "y": 18.037759476361558,
+        "z": 92.92430689654955
+      },
+      "cluster": {
+        "id": 4,
+        "label": "layout"
+      },
+      "tags": [
+        "postlistitem",
+        "getallposts",
+        "link"
+      ]
+    },
+    {
+      "id": "lib/mdx.ts",
+      "displayName": "mdx.ts",
+      "path": "lib/mdx.ts",
+      "directory": "lib",
+      "extension": ".ts",
+      "metrics": {
+        "sloc": 65,
+        "methods": 3,
+        "fanIn": 4,
+        "fanOut": 1
+      },
+      "normalized": {
+        "size": 0.5315837562877231,
+        "heat": 0.16260032102728733
+      },
+      "position": {
+        "x": -37.55013091512109,
+        "y": 85.45383445649632,
+        "z": 111.34195673080158
+      },
+      "cluster": {
+        "id": 5,
+        "label": "lib"
+      },
+      "tags": [
+        "slug",
+        "postsdirectory",
+        "filename"
+      ]
+    },
+    {
+      "id": "components/blog/PostBody.tsx",
+      "displayName": "PostBody.tsx",
+      "path": "components/blog/PostBody.tsx",
+      "directory": "components/blog",
+      "extension": ".tsx",
+      "metrics": {
+        "sloc": 25,
+        "methods": 1,
+        "fanIn": 1,
+        "fanOut": 0
+      },
+      "normalized": {
+        "size": 0.3335547536308114,
+        "heat": 0.02407704654895666
+      },
+      "position": {
+        "x": -14.543109545649452,
+        "y": 153.72569412283175,
+        "z": 198.68673413296295
+      },
+      "cluster": {
+        "id": 10,
+        "label": "blog"
+      },
+      "tags": [
+        "source",
+        "compilemdx",
+        "rehypeprettycode"
+      ]
+    },
+    {
+      "id": "components/blog/PostList.tsx",
+      "displayName": "PostList.tsx",
+      "path": "components/blog/PostList.tsx",
+      "directory": "components/blog",
+      "extension": ".tsx",
+      "metrics": {
+        "sloc": 11,
+        "methods": 1,
+        "fanIn": 1,
+        "fanOut": 2
+      },
+      "normalized": {
+        "size": 0.1634071737423871,
+        "heat": 0.21059390048154095
+      },
+      "position": {
+        "x": 30.936400470572316,
+        "y": 103.79353689926593,
+        "z": 58.968860191161674
+      },
+      "cluster": {
+        "id": 8,
+        "label": "blog"
+      },
+      "tags": [
+        "postlistitem",
+        "postmeta",
+        "posts"
+      ]
+    },
+    {
+      "id": "lib/types/blog.ts",
+      "displayName": "blog.ts",
+      "path": "lib/types/blog.ts",
+      "directory": "lib/types",
+      "extension": ".ts",
+      "metrics": {
+        "sloc": 12,
+        "methods": 0,
+        "fanIn": 3,
+        "fanOut": 0
+      },
+      "normalized": {
+        "size": 0.18144021384330006,
+        "heat": 0.011556982343499196
+      },
+      "position": {
+        "x": 23.980599970717563,
+        "y": 93.58560823263028,
+        "z": 101.13486413555695
+      },
+      "cluster": {
+        "id": 8,
+        "label": "blog"
+      },
+      "tags": [
+        "postmeta",
+        "mdx",
+        "minutes"
+      ]
+    },
+    {
+      "id": "components/blog/PostListItem.tsx",
+      "displayName": "PostListItem.tsx",
+      "path": "components/blog/PostListItem.tsx",
+      "directory": "components/blog",
+      "extension": ".tsx",
+      "metrics": {
+        "sloc": 30,
+        "methods": 2,
+        "fanIn": 2,
+        "fanOut": 1
+      },
+      "normalized": {
+        "size": 0.3713407542513749,
+        "heat": 0.128892455858748
+      },
+      "position": {
+        "x": 37.760420717605996,
+        "y": 54.670386686093664,
+        "z": 82.73112137471986
+      },
+      "cluster": {
+        "id": 8,
+        "label": "blog"
+      },
+      "tags": [
+        "span",
+        "formatdate",
+        "iso"
       ]
     },
     {
@@ -357,27 +667,27 @@
       "directory": "components/hero",
       "extension": ".tsx",
       "metrics": {
-        "sloc": 90,
+        "sloc": 106,
         "methods": 1,
         "fanIn": 1,
         "fanOut": 1
       },
       "normalized": {
-        "size": 0.5990272952800135,
-        "heat": 0.18667736757624398
+        "size": 0.6329393658946205,
+        "heat": 0.20208667736757624
       },
       "position": {
-        "x": 26.49244371093205,
-        "y": 41.2025337028676,
-        "z": -62.36312710171811
+        "x": -88.34519212424769,
+        "y": -101.62094237034268,
+        "z": 77.75253320898968
       },
       "cluster": {
-        "id": 2,
+        "id": 3,
         "label": "hero"
       },
       "tags": [
-        "useref",
         "sm",
+        "useref",
         "scrambletext"
       ]
     },
@@ -398,12 +708,12 @@
         "heat": 0.2972712680577849
       },
       "position": {
-        "x": 38.247996143562546,
-        "y": 102.80413875051148,
-        "z": -80.68178828955335
+        "x": -145.69463750540964,
+        "y": -110.73020464268677,
+        "z": 70.89770172053869
       },
       "cluster": {
-        "id": 2,
+        "id": 3,
         "label": "hero"
       },
       "tags": [
@@ -429,12 +739,12 @@
         "heat": 0.21171749598715892
       },
       "position": {
-        "x": 46.0637715482259,
-        "y": 153.5914226263928,
-        "z": -68.64575452338558
+        "x": -155.5937175593359,
+        "y": -95.86729859293004,
+        "z": 30.087535209057325
       },
       "cluster": {
-        "id": 2,
+        "id": 3,
         "label": "hero"
       },
       "tags": [
@@ -460,12 +770,12 @@
         "heat": 0.004815409309791332
       },
       "position": {
-        "x": 37.69276911287779,
-        "y": 142.9016914216021,
-        "z": -107.42128493710577
+        "x": -175.138612654272,
+        "y": -73.39579928120756,
+        "z": 61.090935114365884
       },
       "cluster": {
-        "id": 2,
+        "id": 3,
         "label": "hero"
       },
       "tags": [
@@ -491,9 +801,9 @@
         "heat": 0.10963081861958267
       },
       "position": {
-        "x": -46.205205947552436,
-        "y": -77.72574058320023,
-        "z": 109.41998582230313
+        "x": 21.36568901404724,
+        "y": 88.81107654627505,
+        "z": -79.58447267111309
       },
       "cluster": {
         "id": 1,
@@ -512,28 +822,28 @@
       "directory": "app",
       "extension": ".tsx",
       "metrics": {
-        "sloc": 15,
+        "sloc": 23,
         "methods": 1,
         "fanIn": 0,
-        "fanOut": 2
+        "fanOut": 3
       },
       "normalized": {
-        "size": 0.22768654102863858,
-        "heat": 0.214446227929374
+        "size": 0.3162739801308615,
+        "heat": 0.3221508828250402
       },
       "position": {
-        "x": 8.277931156717997,
-        "y": -8.738541645552916,
-        "z": -24.902755508124926
+        "x": -45.759348588058195,
+        "y": -37.22808072950591,
+        "z": 55.40025973785602
       },
       "cluster": {
-        "id": 7,
+        "id": 12,
         "label": "app"
       },
       "tags": [
+        "section",
         "herosection",
-        "projectssection",
-        "section"
+        "projectssection"
       ]
     },
     {
@@ -543,28 +853,90 @@
       "directory": "app",
       "extension": ".tsx",
       "metrics": {
-        "sloc": 39,
+        "sloc": 41,
         "methods": 1,
         "fanIn": 0,
-        "fanOut": 2
+        "fanOut": 1
       },
       "normalized": {
-        "size": 0.4257155436855503,
-        "heat": 0.2375601926163724
+        "size": 0.43608016439249386,
+        "heat": 0.13948635634028894
       },
       "position": {
-        "x": 55.91181447391903,
-        "y": -107.9151974820249,
-        "z": -63.06057458049632
+        "x": 121.32935644846671,
+        "y": -62.37304550805869,
+        "z": -152.8219040110341
       },
       "cluster": {
-        "id": 5,
+        "id": 7,
         "label": "app"
       },
       "tags": [
         "antic",
-        "children",
-        "doto"
+        "doto",
+        "children"
+      ]
+    },
+    {
+      "id": "app/feed.xml/route.ts",
+      "displayName": "route.ts",
+      "path": "app/feed.xml/route.ts",
+      "directory": "app/feed.xml",
+      "extension": ".ts",
+      "metrics": {
+        "sloc": 46,
+        "methods": 3,
+        "fanIn": 0,
+        "fanOut": 1
+      },
+      "normalized": {
+        "size": 0.45992819335359797,
+        "heat": 0.14430176565008027
+      },
+      "position": {
+        "x": -105.10717453560181,
+        "y": 86.84634147423971,
+        "z": 111.06995983531786
+      },
+      "cluster": {
+        "id": 5,
+        "label": "lib"
+      },
+      "tags": [
+        "escapexml",
+        "siteurl",
+        "xml"
+      ]
+    },
+    {
+      "id": "app/api/contact/route.ts",
+      "displayName": "route.ts",
+      "path": "app/api/contact/route.ts",
+      "directory": "app/api/contact",
+      "extension": ".ts",
+      "metrics": {
+        "sloc": 93,
+        "methods": 3,
+        "fanIn": 0,
+        "fanOut": 0
+      },
+      "normalized": {
+        "size": 0.6058229605174377,
+        "heat": 0.08956661316211878
+      },
+      "position": {
+        "x": 275.0100701250782,
+        "y": -90.54142398305945,
+        "z": 96.53230301381205
+      },
+      "cluster": {
+        "id": 6,
+        "label": "contact"
+      },
+      "tags": [
+        "valid",
+        "ip",
+        "success"
       ]
     },
     {
@@ -584,9 +956,9 @@
         "heat": 0.30497592295345105
       },
       "position": {
-        "x": -78.43330762375993,
-        "y": -92.15263410123411,
-        "z": 85.43787232868276
+        "x": 57.71951857558748,
+        "y": 73.31251673542363,
+        "z": -89.58207437991959
       },
       "cluster": {
         "id": 1,
@@ -595,12 +967,86 @@
       "tags": [
         "status",
         "fetch",
-        "error"
+        "repo"
+      ]
+    },
+    {
+      "id": "app/blog/page.tsx",
+      "displayName": "page.tsx",
+      "path": "app/blog/page.tsx",
+      "directory": "app/blog",
+      "extension": ".tsx",
+      "metrics": {
+        "sloc": 24,
+        "methods": 1,
+        "fanIn": 0,
+        "fanOut": 2
+      },
+      "normalized": {
+        "size": 0.3250944270660364,
+        "heat": 0.2231139646869984
+      },
+      "position": {
+        "x": -23.621620866749012,
+        "y": 116.82595380799371,
+        "z": 63.77049641320717
+      },
+      "cluster": {
+        "id": 7,
+        "label": "app"
+      },
+      "tags": [
+        "posts",
+        "metadata",
+        "postlist"
+      ]
+    },
+    {
+      "id": "app/blog/[slug]/page.tsx",
+      "displayName": "page.tsx",
+      "path": "app/blog/[slug]/page.tsx",
+      "directory": "app/blog/[slug]",
+      "extension": ".tsx",
+      "metrics": {
+        "sloc": 68,
+        "methods": 4,
+        "fanIn": 0,
+        "fanOut": 2
+      },
+      "normalized": {
+        "size": 0.5409349313516498,
+        "heat": 0.26548956661316214
+      },
+      "position": {
+        "x": -34.38309230183044,
+        "y": 120.7536934791417,
+        "z": 166.0356852470894
+      },
+      "cluster": {
+        "id": 4,
+        "label": "layout"
+      },
+      "tags": [
+        "slug",
+        "params",
+        "getpostbyslug"
       ]
     }
   ],
   "edges": {
     "dependencies": [
+      {
+        "source": "components/contact/ContactModal.tsx",
+        "target": "components/contact/ContactForm.tsx"
+      },
+      {
+        "source": "components/contact/ContactModal.tsx",
+        "target": "lib/types/contact.ts"
+      },
+      {
+        "source": "components/contact/ContactForm.tsx",
+        "target": "lib/types/contact.ts"
+      },
       {
         "source": "components/projects/ProjectsSection.tsx",
         "target": "lib/github.ts"
@@ -658,6 +1104,42 @@
         "target": "lib/types/github.ts"
       },
       {
+        "source": "components/layout/LayoutShell.tsx",
+        "target": "components/layout/Header.tsx"
+      },
+      {
+        "source": "components/layout/LayoutShell.tsx",
+        "target": "components/layout/Footer.tsx"
+      },
+      {
+        "source": "components/layout/LayoutShell.tsx",
+        "target": "components/contact/ContactModal.tsx"
+      },
+      {
+        "source": "components/home/RecentPosts.tsx",
+        "target": "lib/mdx.ts"
+      },
+      {
+        "source": "components/home/RecentPosts.tsx",
+        "target": "components/blog/PostListItem.tsx"
+      },
+      {
+        "source": "lib/mdx.ts",
+        "target": "lib/types/blog.ts"
+      },
+      {
+        "source": "components/blog/PostList.tsx",
+        "target": "lib/types/blog.ts"
+      },
+      {
+        "source": "components/blog/PostList.tsx",
+        "target": "components/blog/PostListItem.tsx"
+      },
+      {
+        "source": "components/blog/PostListItem.tsx",
+        "target": "lib/types/blog.ts"
+      },
+      {
         "source": "components/hero/HeroSection.tsx",
         "target": "components/hero/ScrambleText.tsx"
       },
@@ -686,12 +1168,16 @@
         "target": "components/projects/ProjectsSection.tsx"
       },
       {
-        "source": "app/layout.tsx",
-        "target": "components/layout/Header.tsx"
+        "source": "app/page.tsx",
+        "target": "components/home/RecentPosts.tsx"
       },
       {
         "source": "app/layout.tsx",
-        "target": "components/layout/Footer.tsx"
+        "target": "components/layout/LayoutShell.tsx"
+      },
+      {
+        "source": "app/feed.xml/route.ts",
+        "target": "lib/mdx.ts"
       },
       {
         "source": "app/api/github/route.ts",
@@ -700,9 +1186,37 @@
       {
         "source": "app/api/github/route.ts",
         "target": "lib/types/github.ts"
+      },
+      {
+        "source": "app/blog/page.tsx",
+        "target": "lib/mdx.ts"
+      },
+      {
+        "source": "app/blog/page.tsx",
+        "target": "components/blog/PostList.tsx"
+      },
+      {
+        "source": "app/blog/[slug]/page.tsx",
+        "target": "lib/mdx.ts"
+      },
+      {
+        "source": "app/blog/[slug]/page.tsx",
+        "target": "components/blog/PostBody.tsx"
       }
     ],
     "filesystem": [
+      {
+        "source": "components/contact",
+        "target": "components/contact/ContactModal.tsx"
+      },
+      {
+        "source": "lib/types",
+        "target": "lib/types/contact.ts"
+      },
+      {
+        "source": "components/contact",
+        "target": "components/contact/ContactForm.tsx"
+      },
       {
         "source": "components/projects",
         "target": "components/projects/ProjectsSection.tsx"
@@ -745,7 +1259,35 @@
       },
       {
         "source": "components/layout",
+        "target": "components/layout/LayoutShell.tsx"
+      },
+      {
+        "source": "components/layout",
         "target": "components/layout/Header.tsx"
+      },
+      {
+        "source": "components/home",
+        "target": "components/home/RecentPosts.tsx"
+      },
+      {
+        "source": "lib",
+        "target": "lib/mdx.ts"
+      },
+      {
+        "source": "components/blog",
+        "target": "components/blog/PostBody.tsx"
+      },
+      {
+        "source": "components/blog",
+        "target": "components/blog/PostList.tsx"
+      },
+      {
+        "source": "lib/types",
+        "target": "lib/types/blog.ts"
+      },
+      {
+        "source": "components/blog",
+        "target": "components/blog/PostListItem.tsx"
       },
       {
         "source": "components/hero",
@@ -776,12 +1318,28 @@
         "target": "app/layout.tsx"
       },
       {
+        "source": "app/feed.xml",
+        "target": "app/feed.xml/route.ts"
+      },
+      {
+        "source": "app/api/contact",
+        "target": "app/api/contact/route.ts"
+      },
+      {
         "source": "app/api/github",
         "target": "app/api/github/route.ts"
       },
       {
+        "source": "app/blog",
+        "target": "app/blog/page.tsx"
+      },
+      {
+        "source": "app/blog/[slug]",
+        "target": "app/blog/[slug]/page.tsx"
+      },
+      {
         "source": "components",
-        "target": "components/projects"
+        "target": "components/contact"
       },
       {
         "source": "lib",
@@ -789,7 +1347,19 @@
       },
       {
         "source": "components",
+        "target": "components/projects"
+      },
+      {
+        "source": "components",
         "target": "components/layout"
+      },
+      {
+        "source": "components",
+        "target": "components/home"
+      },
+      {
+        "source": "components",
+        "target": "components/blog"
       },
       {
         "source": "components",
@@ -800,12 +1370,28 @@
         "target": "lib/constants"
       },
       {
+        "source": "app",
+        "target": "app/feed.xml"
+      },
+      {
+        "source": "app/api",
+        "target": "app/api/contact"
+      },
+      {
+        "source": "app",
+        "target": "app/api"
+      },
+      {
         "source": "app/api",
         "target": "app/api/github"
       },
       {
         "source": "app",
-        "target": "app/api"
+        "target": "app/blog"
+      },
+      {
+        "source": "app/blog",
+        "target": "app/blog/[slug]"
       }
     ]
   },
@@ -815,7 +1401,7 @@
       "label": "projects",
       "nodeCount": 4,
       "sloc": 1154,
-      "slocPercent": 57.7,
+      "slocPercent": 40.86,
       "avgFanIn": 1.2,
       "avgFanOut": 1.8,
       "avgMethods": 2.2
@@ -823,72 +1409,122 @@
     {
       "id": 1,
       "label": "projects",
-      "nodeCount": 6,
-      "sloc": 346,
-      "slocPercent": 17.3,
-      "avgFanIn": 1.5,
-      "avgFanOut": 1.12,
-      "avgMethods": 0.75
+      "nodeCount": 7,
+      "sloc": 409,
+      "slocPercent": 14.48,
+      "avgFanIn": 1.27,
+      "avgFanOut": 1.36,
+      "avgMethods": 0.73
     },
     {
       "id": 2,
-      "label": "hero",
-      "nodeCount": 4,
-      "sloc": 312,
-      "slocPercent": 15.6,
-      "avgFanIn": 1.67,
-      "avgFanOut": 1.17,
-      "avgMethods": 0.5
+      "label": "contact",
+      "nodeCount": 3,
+      "sloc": 351,
+      "slocPercent": 12.43,
+      "avgFanIn": 0.8,
+      "avgFanOut": 1.2,
+      "avgMethods": 0.2
     },
     {
       "id": 3,
-      "label": "projects",
-      "nodeCount": 1,
-      "sloc": 63,
-      "slocPercent": 3.15,
-      "avgFanIn": 0.75,
-      "avgFanOut": 1.5,
+      "label": "hero",
+      "nodeCount": 4,
+      "sloc": 328,
+      "slocPercent": 11.61,
+      "avgFanIn": 2.17,
+      "avgFanOut": 1.17,
       "avgMethods": 0.5
     },
     {
       "id": 4,
       "label": "layout",
+      "nodeCount": 3,
+      "sloc": 141,
+      "slocPercent": 4.99,
+      "avgFanIn": 1,
+      "avgFanOut": 1.29,
+      "avgMethods": 0.86
+    },
+    {
+      "id": 5,
+      "label": "lib",
+      "nodeCount": 2,
+      "sloc": 111,
+      "slocPercent": 3.93,
+      "avgFanIn": 1.4,
+      "avgFanOut": 1,
+      "avgMethods": 1.2
+    },
+    {
+      "id": 6,
+      "label": "contact",
       "nodeCount": 1,
-      "sloc": 39,
-      "slocPercent": 1.95,
+      "sloc": 93,
+      "slocPercent": 3.29,
+      "avgFanIn": 1,
+      "avgFanOut": 0.67,
+      "avgMethods": 1
+    },
+    {
+      "id": 7,
+      "label": "app",
+      "nodeCount": 2,
+      "sloc": 65,
+      "slocPercent": 2.3,
+      "avgFanIn": 1,
+      "avgFanOut": 1,
+      "avgMethods": 0.33
+    },
+    {
+      "id": 8,
+      "label": "blog",
+      "nodeCount": 3,
+      "sloc": 53,
+      "slocPercent": 1.88,
+      "avgFanIn": 1,
+      "avgFanOut": 1,
+      "avgMethods": 0.75
+    },
+    {
+      "id": 9,
+      "label": "layout",
+      "nodeCount": 1,
+      "sloc": 47,
+      "slocPercent": 1.66,
       "avgFanIn": 0,
       "avgFanOut": 0,
       "avgMethods": 1
     },
     {
-      "id": 5,
-      "label": "app",
+      "id": 10,
+      "label": "blog",
       "nodeCount": 1,
-      "sloc": 39,
-      "slocPercent": 1.95,
-      "avgFanIn": 0.8,
-      "avgFanOut": 0.8,
-      "avgMethods": 0.2
-    },
-    {
-      "id": 6,
-      "label": "layout",
-      "nodeCount": 1,
-      "sloc": 32,
-      "slocPercent": 1.6,
-      "avgFanIn": 0.5,
-      "avgFanOut": 0.5,
-      "avgMethods": 0.5
-    },
-    {
-      "id": 7,
-      "label": "app",
-      "nodeCount": 1,
-      "sloc": 15,
-      "slocPercent": 0.75,
+      "sloc": 25,
+      "slocPercent": 0.89,
       "avgFanIn": 0.67,
       "avgFanOut": 0.67,
       "avgMethods": 0.33
+    },
+    {
+      "id": 11,
+      "label": "layout",
+      "nodeCount": 1,
+      "sloc": 24,
+      "slocPercent": 0.85,
+      "avgFanIn": 0.75,
+      "avgFanOut": 1,
+      "avgMethods": 0.25
+    },
+    {
+      "id": 12,
+      "label": "app",
+      "nodeCount": 1,
+      "sloc": 23,
+      "slocPercent": 0.81,
+      "avgFanIn": 0.75,
+      "avgFanOut": 0.75,
+      "avgMethods": 0.25
     }
   ],
   "filesystem": {
@@ -897,6 +1533,14 @@
         "id": "components",
         "displayName": "components",
         "children": [
+          {
+            "id": "components/contact",
+            "displayName": "contact",
+            "children": [
+              "components/contact/ContactModal.tsx",
+              "components/contact/ContactForm.tsx"
+            ]
+          },
           {
             "id": "components/projects",
             "displayName": "projects",
@@ -912,7 +1556,24 @@
             "displayName": "layout",
             "children": [
               "components/layout/Footer.tsx",
+              "components/layout/LayoutShell.tsx",
               "components/layout/Header.tsx"
+            ]
+          },
+          {
+            "id": "components/home",
+            "displayName": "home",
+            "children": [
+              "components/home/RecentPosts.tsx"
+            ]
+          },
+          {
+            "id": "components/blog",
+            "displayName": "blog",
+            "children": [
+              "components/blog/PostBody.tsx",
+              "components/blog/PostList.tsx",
+              "components/blog/PostListItem.tsx"
             ]
           },
           {
@@ -933,8 +1594,10 @@
             "id": "lib/types",
             "displayName": "types",
             "children": [
+              "lib/types/contact.ts",
               "lib/types/github.ts",
-              "lib/types/emerge.ts"
+              "lib/types/emerge.ts",
+              "lib/types/blog.ts"
             ]
           },
           {
@@ -946,6 +1609,7 @@
           },
           "lib/github.ts",
           "lib/projectGraphUtils.ts",
+          "lib/mdx.ts",
           "lib/scrambleCharsets.ts"
         ]
       },
@@ -962,9 +1626,23 @@
         "displayName": "app",
         "children": [
           {
+            "id": "app/feed.xml",
+            "displayName": "feed.xml",
+            "children": [
+              "app/feed.xml/route.ts"
+            ]
+          },
+          {
             "id": "app/api",
             "displayName": "api",
             "children": [
+              {
+                "id": "app/api/contact",
+                "displayName": "contact",
+                "children": [
+                  "app/api/contact/route.ts"
+                ]
+              },
               {
                 "id": "app/api/github",
                 "displayName": "github",
@@ -972,6 +1650,20 @@
                   "app/api/github/route.ts"
                 ]
               }
+            ]
+          },
+          {
+            "id": "app/blog",
+            "displayName": "blog",
+            "children": [
+              {
+                "id": "app/blog/[slug]",
+                "displayName": "[slug]",
+                "children": [
+                  "app/blog/[slug]/page.tsx"
+                ]
+              },
+              "app/blog/page.tsx"
             ]
           },
           "app/page.tsx",
@@ -982,18 +1674,18 @@
   },
   "stats": {
     "maxFanIn": {
-      "value": 7,
-      "file": "lib/types/github.ts"
+      "value": 9,
+      "file": "react"
     },
     "maxFanOut": {
       "value": 6,
       "file": "components/projects/ProjectsSection.tsx"
     },
-    "avgSloc": 105.26,
+    "avgSloc": 85.58,
     "avgFanIn": 1.12,
     "avgFanOut": 1.12,
-    "avgMethods": 1.37,
-    "louvainCommunities": 8,
-    "louvainModularity": 0.65
+    "avgMethods": 1.42,
+    "louvainCommunities": 13,
+    "louvainModularity": 0.69
   }
 }
