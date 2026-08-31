@@ -1,74 +1,229 @@
 {
   "meta": {
     "name": "www-portfolio",
-    "analyzedAt": "2026-04-13T06:56:06.627Z",
+    "analyzedAt": "2026-08-31T13:12:34.912Z",
     "emergeVersion": "2.0.7",
-    "totalFiles": 19,
-    "totalDirectories": 9,
-    "totalSloc": 2000,
-    "totalEdges": 25
+    "totalFiles": 33,
+    "totalDirectories": 16,
+    "totalSloc": 2824,
+    "totalEdges": 42
   },
   "nodes": [
     {
-      "id": "components/projects/ProjectsSection.tsx",
-      "displayName": "ProjectsSection.tsx",
-      "path": "components/projects/ProjectsSection.tsx",
-      "directory": "components/projects",
+      "id": "app/layout.tsx",
+      "displayName": "layout.tsx",
+      "path": "app/layout.tsx",
+      "directory": "app",
       "extension": ".tsx",
       "metrics": {
-        "sloc": 63,
-        "methods": 2,
-        "fanIn": 1,
-        "fanOut": 4
+        "sloc": 41,
+        "methods": 1,
+        "fanIn": 0,
+        "fanOut": 1
       },
       "normalized": {
-        "size": 0.5251066909916274,
-        "heat": 0.4606741573033708
+        "size": 0.43608016439249386,
+        "heat": 0.13948635634028894
       },
       "position": {
-        "x": -6.754196746738246,
-        "y": -56.14003571912493,
-        "z": 27.71674001572402
+        "x": 49.978847111320974,
+        "y": -109.01653303877686,
+        "z": -95.57006333073994
       },
       "cluster": {
-        "id": 3,
-        "label": "projects"
+        "id": 5,
+        "label": "app"
       },
       "tags": [
-        "usestate",
-        "loading",
-        "activeproject"
+        "antic",
+        "doto",
+        "children"
       ]
     },
     {
-      "id": "lib/github.ts",
-      "displayName": "github.ts",
-      "path": "lib/github.ts",
+      "id": "app/page.tsx",
+      "displayName": "page.tsx",
+      "path": "app/page.tsx",
+      "directory": "app",
+      "extension": ".tsx",
+      "metrics": {
+        "sloc": 23,
+        "methods": 1,
+        "fanIn": 0,
+        "fanOut": 3
+      },
+      "normalized": {
+        "size": 0.3162739801308615,
+        "heat": 0.3221508828250402
+      },
+      "position": {
+        "x": 27.99365807064798,
+        "y": -35.03339667382429,
+        "z": 38.28570410609254
+      },
+      "cluster": {
+        "id": 11,
+        "label": "app"
+      },
+      "tags": [
+        "section",
+        "herosection",
+        "projectssection"
+      ]
+    },
+    {
+      "id": "app/feed.xml/route.ts",
+      "displayName": "route.ts",
+      "path": "app/feed.xml/route.ts",
+      "directory": "app/feed.xml",
+      "extension": ".ts",
+      "metrics": {
+        "sloc": 46,
+        "methods": 3,
+        "fanIn": 0,
+        "fanOut": 1
+      },
+      "normalized": {
+        "size": 0.45992819335359797,
+        "heat": 0.14430176565008027
+      },
+      "position": {
+        "x": 21.841931387056505,
+        "y": -47.48344386883216,
+        "z": -98.62908510583303
+      },
+      "cluster": {
+        "id": 4,
+        "label": "feed.xml"
+      },
+      "tags": [
+        "escapexml",
+        "siteurl",
+        "xml"
+      ]
+    },
+    {
+      "id": "lib/mdx.ts",
+      "displayName": "mdx.ts",
+      "path": "lib/mdx.ts",
       "directory": "lib",
       "extension": ".ts",
       "metrics": {
-        "sloc": 37,
-        "methods": 2,
-        "fanIn": 1,
-        "fanOut": 2
+        "sloc": 65,
+        "methods": 3,
+        "fanIn": 4,
+        "fanOut": 1
       },
       "normalized": {
-        "size": 0.41480517092915176,
-        "heat": 0.23563402889245588
+        "size": 0.5315837562877231,
+        "heat": 0.16260032102728733
       },
       "position": {
-        "x": -7.301976302276899,
-        "y": -69.35247355951397,
-        "z": 89.45218266465028
+        "x": -61.99747128390849,
+        "y": -66.6450369287722,
+        "z": -60.793440410880336
+      },
+      "cluster": {
+        "id": 4,
+        "label": "feed.xml"
+      },
+      "tags": [
+        "slug",
+        "postsdirectory",
+        "filename"
+      ]
+    },
+    {
+      "id": "app/api/contact/route.ts",
+      "displayName": "route.ts",
+      "path": "app/api/contact/route.ts",
+      "directory": "app/api/contact",
+      "extension": ".ts",
+      "metrics": {
+        "sloc": 93,
+        "methods": 3,
+        "fanIn": 0,
+        "fanOut": 0
+      },
+      "normalized": {
+        "size": 0.6058229605174377,
+        "heat": 0.08956661316211878
+      },
+      "position": {
+        "x": 163.7033386380656,
+        "y": 6.745716051262956,
+        "z": 257.6372315308339
       },
       "cluster": {
         "id": 1,
         "label": "projects"
       },
       "tags": [
-        "reponame",
-        "project",
-        "await"
+        "valid",
+        "ip",
+        "success"
+      ]
+    },
+    {
+      "id": "app/api/github/route.ts",
+      "displayName": "route.ts",
+      "path": "app/api/github/route.ts",
+      "directory": "app/api/github",
+      "extension": ".ts",
+      "metrics": {
+        "sloc": 109,
+        "methods": 1,
+        "fanIn": 0,
+        "fanOut": 2
+      },
+      "normalized": {
+        "size": 0.6387234404914758,
+        "heat": 0.30497592295345105
+      },
+      "position": {
+        "x": 135.92556543880167,
+        "y": 142.39701833276794,
+        "z": 8.551855810078687
+      },
+      "cluster": {
+        "id": 1,
+        "label": "projects"
+      },
+      "tags": [
+        "status",
+        "fetch",
+        "repo"
+      ]
+    },
+    {
+      "id": "lib/constants/projects.ts",
+      "displayName": "projects.ts",
+      "path": "lib/constants/projects.ts",
+      "directory": "lib/constants",
+      "extension": ".ts",
+      "metrics": {
+        "sloc": 10,
+        "methods": 0,
+        "fanIn": 2,
+        "fanOut": 1
+      },
+      "normalized": {
+        "size": 0.14365421322273642,
+        "heat": 0.10963081861958267
+      },
+      "position": {
+        "x": 122.17775233719804,
+        "y": 123.20589801700503,
+        "z": -28.008598000002717
+      },
+      "cluster": {
+        "id": 1,
+        "label": "projects"
+      },
+      "tags": [
+        "projectsconfig",
+        "featuredproject",
+        "projectconfigentry"
       ]
     },
     {
@@ -88,9 +243,9 @@
         "heat": 0.04526484751203852
       },
       "position": {
-        "x": -35.18957693527811,
-        "y": -49.05174316719409,
-        "z": 60.70288028385359
+        "x": 111.13533033689143,
+        "y": 89.08241058909245,
+        "z": 13.580695404447052
       },
       "cluster": {
         "id": 1,
@@ -99,38 +254,69 @@
       "tags": [
         "interface",
         "bytes",
-        "name"
+        "displayname"
       ]
     },
     {
-      "id": "components/projects/ProjectGraph.tsx",
-      "displayName": "ProjectGraph.tsx",
-      "path": "components/projects/ProjectGraph.tsx",
-      "directory": "components/projects",
+      "id": "app/blog/page.tsx",
+      "displayName": "page.tsx",
+      "path": "app/blog/page.tsx",
+      "directory": "app/blog",
       "extension": ".tsx",
       "metrics": {
-        "sloc": 362,
-        "methods": 4,
+        "sloc": 24,
+        "methods": 1,
         "fanIn": 0,
-        "fanOut": 4
+        "fanOut": 2
       },
       "normalized": {
-        "size": 0.887483919792639,
-        "heat": 0.7486356340288924
+        "size": 0.3250944270660364,
+        "heat": 0.2231139646869984
       },
       "position": {
-        "x": -31.65999442142964,
-        "y": 64.21766853753046,
-        "z": 34.24663080042186
+        "x": -74.87166617715052,
+        "y": -137.79046921685,
+        "z": -49.10062862594098
       },
       "cluster": {
-        "id": 0,
-        "label": "projects"
+        "id": 5,
+        "label": "app"
       },
       "tags": [
-        "span",
-        "div",
-        "node"
+        "posts",
+        "metadata",
+        "postlist"
+      ]
+    },
+    {
+      "id": "app/blog/[slug]/page.tsx",
+      "displayName": "page.tsx",
+      "path": "app/blog/[slug]/page.tsx",
+      "directory": "app/blog/[slug]",
+      "extension": ".tsx",
+      "metrics": {
+        "sloc": 68,
+        "methods": 4,
+        "fanIn": 0,
+        "fanOut": 2
+      },
+      "normalized": {
+        "size": 0.5409349313516498,
+        "heat": 0.26548956661316214
+      },
+      "position": {
+        "x": -128.2029407973143,
+        "y": -2.086402107946643,
+        "z": -54.68996647712357
+      },
+      "cluster": {
+        "id": 5,
+        "label": "app"
+      },
+      "tags": [
+        "slug",
+        "params",
+        "getpostbyslug"
       ]
     },
     {
@@ -150,18 +336,18 @@
         "heat": 0.8
       },
       "position": {
-        "x": -28.946527170495028,
-        "y": 116.83005117347184,
-        "z": 21.306887589859933
+        "x": -13.548093562796938,
+        "y": 160.24080549890303,
+        "z": 89.18438699220349
       },
       "cluster": {
         "id": 0,
-        "label": "projects"
+        "label": "hooks"
       },
       "tags": [
         "useref",
-        "map",
-        "color"
+        "color",
+        "map"
       ]
     },
     {
@@ -181,13 +367,13 @@
         "heat": 0.10690208667736757
       },
       "position": {
-        "x": 10.30010217466809,
-        "y": 106.14574154264392,
-        "z": 34.41138669064377
+        "x": -5.439779905715675,
+        "y": 176.3582418390985,
+        "z": 51.435023446956244
       },
       "cluster": {
         "id": 0,
-        "label": "projects"
+        "label": "hooks"
       },
       "tags": [
         "interface",
@@ -212,204 +398,18 @@
         "heat": 0.055858747993579455
       },
       "position": {
-        "x": -66.28056919863187,
-        "y": 103.7033512236577,
-        "z": 6.113147864342343
+        "x": 6.0411988605381195,
+        "y": 140.49538630480367,
+        "z": 120.15966490639188
       },
       "cluster": {
         "id": 0,
-        "label": "projects"
+        "label": "hooks"
       },
       "tags": [
         "constants",
         "color",
         "clusterid"
-      ]
-    },
-    {
-      "id": "components/projects/ProjectInfo.tsx",
-      "displayName": "ProjectInfo.tsx",
-      "path": "components/projects/ProjectInfo.tsx",
-      "directory": "components/projects",
-      "extension": ".tsx",
-      "metrics": {
-        "sloc": 112,
-        "methods": 2,
-        "fanIn": 1,
-        "fanOut": 1
-      },
-      "normalized": {
-        "size": 0.6443504618252961,
-        "heat": 0.20786516853932585
-      },
-      "position": {
-        "x": -53.25663000306871,
-        "y": -70.93626741914332,
-        "z": 14.075937551468739
-      },
-      "cluster": {
-        "id": 1,
-        "label": "projects"
-      },
-      "tags": [
-        "span",
-        "diffindays",
-        "div"
-      ]
-    },
-    {
-      "id": "components/projects/ProjectSelector.tsx",
-      "displayName": "ProjectSelector.tsx",
-      "path": "components/projects/ProjectSelector.tsx",
-      "directory": "components/projects",
-      "extension": ".tsx",
-      "metrics": {
-        "sloc": 31,
-        "methods": 1,
-        "fanIn": 1,
-        "fanOut": 1
-      },
-      "normalized": {
-        "size": 0.37813641948879895,
-        "heat": 0.12985553772070627
-      },
-      "position": {
-        "x": 19.643677284786666,
-        "y": -87.86562125574314,
-        "z": 46.70021840680189
-      },
-      "cluster": {
-        "id": 1,
-        "label": "projects"
-      },
-      "tags": [
-        "onselect",
-        "activeindex",
-        "isactive"
-      ]
-    },
-    {
-      "id": "components/layout/Footer.tsx",
-      "displayName": "Footer.tsx",
-      "path": "components/layout/Footer.tsx",
-      "directory": "components/layout",
-      "extension": ".tsx",
-      "metrics": {
-        "sloc": 39,
-        "methods": 1,
-        "fanIn": 1,
-        "fanOut": 0
-      },
-      "normalized": {
-        "size": 0.4257155436855503,
-        "heat": 0.0375601926163724
-      },
-      "position": {
-        "x": 21.913010047842278,
-        "y": -133.3466080936437,
-        "z": -97.46601886549787
-      },
-      "cluster": {
-        "id": 4,
-        "label": "layout"
-      },
-      "tags": [
-        "href",
-        "label",
-        "currentyear"
-      ]
-    },
-    {
-      "id": "components/layout/Header.tsx",
-      "displayName": "Header.tsx",
-      "path": "components/layout/Header.tsx",
-      "directory": "components/layout",
-      "extension": ".tsx",
-      "metrics": {
-        "sloc": 32,
-        "methods": 1,
-        "fanIn": 1,
-        "fanOut": 0
-      },
-      "normalized": {
-        "size": 0.38471631248287086,
-        "heat": 0.030818619582664526
-      },
-      "position": {
-        "x": 89.48446869569842,
-        "y": -78.17173595230264,
-        "z": -25.042566212870465
-      },
-      "cluster": {
-        "id": 6,
-        "label": "layout"
-      },
-      "tags": [
-        "href",
-        "link",
-        "label"
-      ]
-    },
-    {
-      "id": "components/hero/HeroSection.tsx",
-      "displayName": "HeroSection.tsx",
-      "path": "components/hero/HeroSection.tsx",
-      "directory": "components/hero",
-      "extension": ".tsx",
-      "metrics": {
-        "sloc": 90,
-        "methods": 1,
-        "fanIn": 1,
-        "fanOut": 1
-      },
-      "normalized": {
-        "size": 0.5990272952800135,
-        "heat": 0.18667736757624398
-      },
-      "position": {
-        "x": 26.49244371093205,
-        "y": 41.2025337028676,
-        "z": -62.36312710171811
-      },
-      "cluster": {
-        "id": 2,
-        "label": "hero"
-      },
-      "tags": [
-        "useref",
-        "sm",
-        "scrambletext"
-      ]
-    },
-    {
-      "id": "components/hero/ScrambleText.tsx",
-      "displayName": "ScrambleText.tsx",
-      "path": "components/hero/ScrambleText.tsx",
-      "directory": "components/hero",
-      "extension": ".tsx",
-      "metrics": {
-        "sloc": 101,
-        "methods": 1,
-        "fanIn": 1,
-        "fanOut": 2
-      },
-      "normalized": {
-        "size": 0.6229253783944873,
-        "heat": 0.2972712680577849
-      },
-      "position": {
-        "x": 38.247996143562546,
-        "y": 102.80413875051148,
-        "z": -80.68178828955335
-      },
-      "cluster": {
-        "id": 2,
-        "label": "hero"
-      },
-      "tags": [
-        "text",
-        "item",
-        "span"
       ]
     },
     {
@@ -429,12 +429,12 @@
         "heat": 0.21171749598715892
       },
       "position": {
-        "x": 46.0637715482259,
-        "y": 153.5914226263928,
-        "z": -68.64575452338558
+        "x": -86.11424009078497,
+        "y": -102.8114146313097,
+        "z": 176.685878930098
       },
       "cluster": {
-        "id": 2,
+        "id": 3,
         "label": "hero"
       },
       "tags": [
@@ -460,12 +460,12 @@
         "heat": 0.004815409309791332
       },
       "position": {
-        "x": 37.69276911287779,
-        "y": 142.9016914216021,
-        "z": -107.42128493710577
+        "x": -56.70719424315155,
+        "y": -131.40473381812726,
+        "z": 182.6761376356639
       },
       "cluster": {
-        "id": 2,
+        "id": 3,
         "label": "hero"
       },
       "tags": [
@@ -475,171 +475,617 @@
       ]
     },
     {
-      "id": "lib/constants/projects.ts",
-      "displayName": "projects.ts",
-      "path": "lib/constants/projects.ts",
-      "directory": "lib/constants",
+      "id": "components/hero/HeroSection.tsx",
+      "displayName": "HeroSection.tsx",
+      "path": "components/hero/HeroSection.tsx",
+      "directory": "components/hero",
+      "extension": ".tsx",
+      "metrics": {
+        "sloc": 106,
+        "methods": 1,
+        "fanIn": 1,
+        "fanOut": 1
+      },
+      "normalized": {
+        "size": 0.6329393658946205,
+        "heat": 0.20208667736757624
+      },
+      "position": {
+        "x": -2.0046104488007397,
+        "y": -69.83885868214188,
+        "z": 99.90809804740877
+      },
+      "cluster": {
+        "id": 3,
+        "label": "hero"
+      },
+      "tags": [
+        "sm",
+        "useref",
+        "scrambletext"
+      ]
+    },
+    {
+      "id": "components/hero/ScrambleText.tsx",
+      "displayName": "ScrambleText.tsx",
+      "path": "components/hero/ScrambleText.tsx",
+      "directory": "components/hero",
+      "extension": ".tsx",
+      "metrics": {
+        "sloc": 101,
+        "methods": 1,
+        "fanIn": 1,
+        "fanOut": 2
+      },
+      "normalized": {
+        "size": 0.6229253783944873,
+        "heat": 0.2972712680577849
+      },
+      "position": {
+        "x": -43.26812536763798,
+        "y": -98.41838061858488,
+        "z": 148.24437775073739
+      },
+      "cluster": {
+        "id": 3,
+        "label": "hero"
+      },
+      "tags": [
+        "text",
+        "item",
+        "span"
+      ]
+    },
+    {
+      "id": "components/contact/ContactModal.tsx",
+      "displayName": "ContactModal.tsx",
+      "path": "components/contact/ContactModal.tsx",
+      "directory": "components/contact",
+      "extension": ".tsx",
+      "metrics": {
+        "sloc": 131,
+        "methods": 1,
+        "fanIn": 1,
+        "fanOut": 2
+      },
+      "normalized": {
+        "size": 0.6768260939177486,
+        "heat": 0.3261637239165329
+      },
+      "position": {
+        "x": -38.271873463137936,
+        "y": 32.723227470714356,
+        "z": -100.44080941555468
+      },
+      "cluster": {
+        "id": 2,
+        "label": "contact"
+      },
+      "tags": [
+        "isopen",
+        "onclose",
+        "not"
+      ]
+    },
+    {
+      "id": "lib/types/contact.ts",
+      "displayName": "contact.ts",
+      "path": "lib/types/contact.ts",
+      "directory": "lib/types",
       "extension": ".ts",
       "metrics": {
-        "sloc": 10,
+        "sloc": 16,
         "methods": 0,
+        "fanIn": 2,
+        "fanOut": 0
+      },
+      "normalized": {
+        "size": 0.2410620992601344,
+        "heat": 0.015409309791332263
+      },
+      "position": {
+        "x": -62.9689598514617,
+        "y": 87.85414663061779,
+        "z": -92.81848957616026
+      },
+      "cluster": {
+        "id": 2,
+        "label": "contact"
+      },
+      "tags": [
+        "message",
+        "email",
+        "interface"
+      ]
+    },
+    {
+      "id": "components/contact/ContactForm.tsx",
+      "displayName": "ContactForm.tsx",
+      "path": "components/contact/ContactForm.tsx",
+      "directory": "components/contact",
+      "extension": ".tsx",
+      "metrics": {
+        "sloc": 204,
+        "methods": 0,
+        "fanIn": 1,
+        "fanOut": 1
+      },
+      "normalized": {
+        "size": 0.7686214723802886,
+        "heat": 0.29646869983948637
+      },
+      "position": {
+        "x": -59.02355973399382,
+        "y": 70.50758414998278,
+        "z": -57.21224152680051
+      },
+      "cluster": {
+        "id": 2,
+        "label": "contact"
+      },
+      "tags": [
+        "focus",
+        "isloading",
+        "seterrors"
+      ]
+    },
+    {
+      "id": "components/projects/ProjectGraph.tsx",
+      "displayName": "ProjectGraph.tsx",
+      "path": "components/projects/ProjectGraph.tsx",
+      "directory": "components/projects",
+      "extension": ".tsx",
+      "metrics": {
+        "sloc": 362,
+        "methods": 4,
+        "fanIn": 0,
+        "fanOut": 4
+      },
+      "normalized": {
+        "size": 0.887483919792639,
+        "heat": 0.7486356340288924
+      },
+      "position": {
+        "x": 31.509617485128796,
+        "y": 138.57309109995717,
+        "z": 67.795936883409
+      },
+      "cluster": {
+        "id": 0,
+        "label": "hooks"
+      },
+      "tags": [
+        "span",
+        "div",
+        "node"
+      ]
+    },
+    {
+      "id": "components/projects/ProjectInfo.tsx",
+      "displayName": "ProjectInfo.tsx",
+      "path": "components/projects/ProjectInfo.tsx",
+      "directory": "components/projects",
+      "extension": ".tsx",
+      "metrics": {
+        "sloc": 112,
+        "methods": 2,
+        "fanIn": 1,
+        "fanOut": 1
+      },
+      "normalized": {
+        "size": 0.6443504618252961,
+        "heat": 0.20786516853932585
+      },
+      "position": {
+        "x": 138.30340547445587,
+        "y": 43.689411288783674,
+        "z": 39.621926191609795
+      },
+      "cluster": {
+        "id": 1,
+        "label": "projects"
+      },
+      "tags": [
+        "span",
+        "diffindays",
+        "diffinhours"
+      ]
+    },
+    {
+      "id": "components/projects/ProjectSelector.tsx",
+      "displayName": "ProjectSelector.tsx",
+      "path": "components/projects/ProjectSelector.tsx",
+      "directory": "components/projects",
+      "extension": ".tsx",
+      "metrics": {
+        "sloc": 31,
+        "methods": 1,
+        "fanIn": 1,
+        "fanOut": 1
+      },
+      "normalized": {
+        "size": 0.37813641948879895,
+        "heat": 0.12985553772070627
+      },
+      "position": {
+        "x": 146.42926372587596,
+        "y": 41.72141480741869,
+        "z": -17.992075953107676
+      },
+      "cluster": {
+        "id": 1,
+        "label": "projects"
+      },
+      "tags": [
+        "onselect",
+        "activeindex",
+        "isactive"
+      ]
+    },
+    {
+      "id": "components/projects/ProjectsSection.tsx",
+      "displayName": "ProjectsSection.tsx",
+      "path": "components/projects/ProjectsSection.tsx",
+      "directory": "components/projects",
+      "extension": ".tsx",
+      "metrics": {
+        "sloc": 63,
+        "methods": 2,
+        "fanIn": 1,
+        "fanOut": 4
+      },
+      "normalized": {
+        "size": 0.5251066909916274,
+        "heat": 0.4606741573033708
+      },
+      "position": {
+        "x": 100.61835780555188,
+        "y": 31.56933237064414,
+        "z": 8.110555366347517
+      },
+      "cluster": {
+        "id": 7,
+        "label": "projects"
+      },
+      "tags": [
+        "loading",
+        "usestate",
+        "activeproject"
+      ]
+    },
+    {
+      "id": "lib/github.ts",
+      "displayName": "github.ts",
+      "path": "lib/github.ts",
+      "directory": "lib",
+      "extension": ".ts",
+      "metrics": {
+        "sloc": 37,
+        "methods": 2,
+        "fanIn": 1,
+        "fanOut": 2
+      },
+      "normalized": {
+        "size": 0.41480517092915176,
+        "heat": 0.23563402889245588
+      },
+      "position": {
+        "x": 101.98061374468126,
+        "y": 79.34401506431047,
+        "z": -30.302708475258438
+      },
+      "cluster": {
+        "id": 1,
+        "label": "projects"
+      },
+      "tags": [
+        "reponame",
+        "project",
+        "projectdata"
+      ]
+    },
+    {
+      "id": "components/layout/LayoutShell.tsx",
+      "displayName": "LayoutShell.tsx",
+      "path": "components/layout/LayoutShell.tsx",
+      "directory": "components/layout",
+      "extension": ".tsx",
+      "metrics": {
+        "sloc": 24,
+        "methods": 1,
+        "fanIn": 1,
+        "fanOut": 3
+      },
+      "normalized": {
+        "size": 0.3250944270660364,
+        "heat": 0.32311396468699843
+      },
+      "position": {
+        "x": 1.4677087144869352,
+        "y": -65.3702952023665,
+        "z": -140.06596750296293
+      },
+      "cluster": {
+        "id": 10,
+        "label": "layout"
+      },
+      "tags": [
+        "setiscontactopen",
+        "children",
+        "iscontactopen"
+      ]
+    },
+    {
+      "id": "components/layout/Footer.tsx",
+      "displayName": "Footer.tsx",
+      "path": "components/layout/Footer.tsx",
+      "directory": "components/layout",
+      "extension": ".tsx",
+      "metrics": {
+        "sloc": 47,
+        "methods": 1,
+        "fanIn": 1,
+        "fanOut": 0
+      },
+      "normalized": {
+        "size": 0.46438533763272277,
+        "heat": 0.04526484751203852
+      },
+      "position": {
+        "x": 31.83557991255937,
+        "y": -112.10554121878832,
+        "z": -168.69125708887273
+      },
+      "cluster": {
+        "id": 8,
+        "label": "layout"
+      },
+      "tags": [
+        "onopencontact",
+        "hover",
+        "currentyear"
+      ]
+    },
+    {
+      "id": "components/layout/Header.tsx",
+      "displayName": "Header.tsx",
+      "path": "components/layout/Header.tsx",
+      "directory": "components/layout",
+      "extension": ".tsx",
+      "metrics": {
+        "sloc": 41,
+        "methods": 1,
+        "fanIn": 1,
+        "fanOut": 0
+      },
+      "normalized": {
+        "size": 0.43608016439249386,
+        "heat": 0.03948635634028892
+      },
+      "position": {
+        "x": -27.389285302163792,
+        "y": -62.24292698377075,
+        "z": -185.80879214238985
+      },
+      "cluster": {
+        "id": 6,
+        "label": "blog"
+      },
+      "tags": [
+        "link",
+        "href",
+        "onopencontact"
+      ]
+    },
+    {
+      "id": "components/home/RecentPosts.tsx",
+      "displayName": "RecentPosts.tsx",
+      "path": "components/home/RecentPosts.tsx",
+      "directory": "components/home",
+      "extension": ".tsx",
+      "metrics": {
+        "sloc": 32,
+        "methods": 1,
+        "fanIn": 1,
+        "fanOut": 2
+      },
+      "normalized": {
+        "size": 0.38471631248287086,
+        "heat": 0.23081861958266453
+      },
+      "position": {
+        "x": -36.70048085955182,
+        "y": -60.96523404362532,
+        "z": -2.5007157758644922
+      },
+      "cluster": {
+        "id": 4,
+        "label": "feed.xml"
+      },
+      "tags": [
+        "postlistitem",
+        "getallposts",
+        "link"
+      ]
+    },
+    {
+      "id": "components/blog/PostList.tsx",
+      "displayName": "PostList.tsx",
+      "path": "components/blog/PostList.tsx",
+      "directory": "components/blog",
+      "extension": ".tsx",
+      "metrics": {
+        "sloc": 11,
+        "methods": 1,
+        "fanIn": 1,
+        "fanOut": 2
+      },
+      "normalized": {
+        "size": 0.1634071737423871,
+        "heat": 0.21059390048154095
+      },
+      "position": {
+        "x": -118.60377868619366,
+        "y": -128.9338873143698,
+        "z": -25.80875850633677
+      },
+      "cluster": {
+        "id": 6,
+        "label": "blog"
+      },
+      "tags": [
+        "postlistitem",
+        "postmeta",
+        "posts"
+      ]
+    },
+    {
+      "id": "lib/types/blog.ts",
+      "displayName": "blog.ts",
+      "path": "lib/types/blog.ts",
+      "directory": "lib/types",
+      "extension": ".ts",
+      "metrics": {
+        "sloc": 12,
+        "methods": 0,
+        "fanIn": 3,
+        "fanOut": 0
+      },
+      "normalized": {
+        "size": 0.18144021384330006,
+        "heat": 0.011556982343499196
+      },
+      "position": {
+        "x": -112.90260135070235,
+        "y": -92.1157316813113,
+        "z": -53.17199187958331
+      },
+      "cluster": {
+        "id": 6,
+        "label": "blog"
+      },
+      "tags": [
+        "postmeta",
+        "mdx",
+        "minutes"
+      ]
+    },
+    {
+      "id": "components/blog/PostBody.tsx",
+      "displayName": "PostBody.tsx",
+      "path": "components/blog/PostBody.tsx",
+      "directory": "components/blog",
+      "extension": ".tsx",
+      "metrics": {
+        "sloc": 25,
+        "methods": 1,
+        "fanIn": 1,
+        "fanOut": 0
+      },
+      "normalized": {
+        "size": 0.3335547536308114,
+        "heat": 0.02407704654895666
+      },
+      "position": {
+        "x": -164.47362934667143,
+        "y": 44.36203406802027,
+        "z": -33.61757961807309
+      },
+      "cluster": {
+        "id": 9,
+        "label": "blog"
+      },
+      "tags": [
+        "source",
+        "compilemdx",
+        "rehypeprettycode"
+      ]
+    },
+    {
+      "id": "components/blog/PostListItem.tsx",
+      "displayName": "PostListItem.tsx",
+      "path": "components/blog/PostListItem.tsx",
+      "directory": "components/blog",
+      "extension": ".tsx",
+      "metrics": {
+        "sloc": 30,
+        "methods": 2,
         "fanIn": 2,
         "fanOut": 1
       },
       "normalized": {
-        "size": 0.14365421322273642,
-        "heat": 0.10963081861958267
+        "size": 0.3713407542513749,
+        "heat": 0.128892455858748
       },
       "position": {
-        "x": -46.205205947552436,
-        "y": -77.72574058320023,
-        "z": 109.41998582230313
+        "x": -98.45387857212246,
+        "y": -86.60744755398503,
+        "z": -6.65430359079283
       },
       "cluster": {
-        "id": 1,
-        "label": "projects"
+        "id": 6,
+        "label": "blog"
       },
       "tags": [
-        "projectsconfig",
-        "featuredproject",
-        "projectconfigentry"
-      ]
-    },
-    {
-      "id": "app/page.tsx",
-      "displayName": "page.tsx",
-      "path": "app/page.tsx",
-      "directory": "app",
-      "extension": ".tsx",
-      "metrics": {
-        "sloc": 15,
-        "methods": 1,
-        "fanIn": 0,
-        "fanOut": 2
-      },
-      "normalized": {
-        "size": 0.22768654102863858,
-        "heat": 0.214446227929374
-      },
-      "position": {
-        "x": 8.277931156717997,
-        "y": -8.738541645552916,
-        "z": -24.902755508124926
-      },
-      "cluster": {
-        "id": 7,
-        "label": "app"
-      },
-      "tags": [
-        "herosection",
-        "projectssection",
-        "section"
-      ]
-    },
-    {
-      "id": "app/layout.tsx",
-      "displayName": "layout.tsx",
-      "path": "app/layout.tsx",
-      "directory": "app",
-      "extension": ".tsx",
-      "metrics": {
-        "sloc": 39,
-        "methods": 1,
-        "fanIn": 0,
-        "fanOut": 2
-      },
-      "normalized": {
-        "size": 0.4257155436855503,
-        "heat": 0.2375601926163724
-      },
-      "position": {
-        "x": 55.91181447391903,
-        "y": -107.9151974820249,
-        "z": -63.06057458049632
-      },
-      "cluster": {
-        "id": 5,
-        "label": "app"
-      },
-      "tags": [
-        "antic",
-        "children",
-        "doto"
-      ]
-    },
-    {
-      "id": "app/api/github/route.ts",
-      "displayName": "route.ts",
-      "path": "app/api/github/route.ts",
-      "directory": "app/api/github",
-      "extension": ".ts",
-      "metrics": {
-        "sloc": 109,
-        "methods": 1,
-        "fanIn": 0,
-        "fanOut": 2
-      },
-      "normalized": {
-        "size": 0.6387234404914758,
-        "heat": 0.30497592295345105
-      },
-      "position": {
-        "x": -78.43330762375993,
-        "y": -92.15263410123411,
-        "z": 85.43787232868276
-      },
-      "cluster": {
-        "id": 1,
-        "label": "projects"
-      },
-      "tags": [
-        "status",
-        "fetch",
-        "error"
+        "span",
+        "formatdate",
+        "iso"
       ]
     }
   ],
   "edges": {
     "dependencies": [
       {
-        "source": "components/projects/ProjectsSection.tsx",
-        "target": "lib/github.ts"
+        "source": "app/layout.tsx",
+        "target": "components/layout/LayoutShell.tsx"
       },
       {
-        "source": "components/projects/ProjectsSection.tsx",
-        "target": "lib/types/github.ts"
+        "source": "app/page.tsx",
+        "target": "components/hero/HeroSection.tsx"
       },
       {
-        "source": "components/projects/ProjectsSection.tsx",
-        "target": "components/projects/ProjectSelector.tsx"
+        "source": "app/page.tsx",
+        "target": "components/projects/ProjectsSection.tsx"
       },
       {
-        "source": "components/projects/ProjectsSection.tsx",
-        "target": "components/projects/ProjectInfo.tsx"
+        "source": "app/page.tsx",
+        "target": "components/home/RecentPosts.tsx"
       },
       {
-        "source": "lib/github.ts",
+        "source": "app/feed.xml/route.ts",
+        "target": "lib/mdx.ts"
+      },
+      {
+        "source": "lib/mdx.ts",
+        "target": "lib/types/blog.ts"
+      },
+      {
+        "source": "app/api/github/route.ts",
         "target": "lib/constants/projects.ts"
       },
       {
-        "source": "lib/github.ts",
+        "source": "app/api/github/route.ts",
         "target": "lib/types/github.ts"
       },
       {
-        "source": "components/projects/ProjectGraph.tsx",
-        "target": "hooks/useProjectGraph.ts"
-      },
-      {
-        "source": "components/projects/ProjectGraph.tsx",
-        "target": "lib/types/emerge.ts"
-      },
-      {
-        "source": "components/projects/ProjectGraph.tsx",
+        "source": "lib/constants/projects.ts",
         "target": "lib/types/github.ts"
       },
       {
-        "source": "components/projects/ProjectGraph.tsx",
-        "target": "lib/projectGraphUtils.ts"
+        "source": "app/blog/page.tsx",
+        "target": "lib/mdx.ts"
+      },
+      {
+        "source": "app/blog/page.tsx",
+        "target": "components/blog/PostList.tsx"
+      },
+      {
+        "source": "app/blog/[slug]/page.tsx",
+        "target": "lib/mdx.ts"
+      },
+      {
+        "source": "app/blog/[slug]/page.tsx",
+        "target": "components/blog/PostBody.tsx"
       },
       {
         "source": "hooks/useProjectGraph.ts",
@@ -650,12 +1096,8 @@
         "target": "lib/projectGraphUtils.ts"
       },
       {
-        "source": "components/projects/ProjectInfo.tsx",
-        "target": "lib/types/github.ts"
-      },
-      {
-        "source": "components/projects/ProjectSelector.tsx",
-        "target": "lib/types/github.ts"
+        "source": "hooks/useTextScramble.ts",
+        "target": "lib/scrambleCharsets.ts"
       },
       {
         "source": "components/hero/HeroSection.tsx",
@@ -670,54 +1112,138 @@
         "target": "lib/scrambleCharsets.ts"
       },
       {
-        "source": "hooks/useTextScramble.ts",
-        "target": "lib/scrambleCharsets.ts"
+        "source": "components/contact/ContactModal.tsx",
+        "target": "components/contact/ContactForm.tsx"
       },
       {
-        "source": "lib/constants/projects.ts",
+        "source": "components/contact/ContactModal.tsx",
+        "target": "lib/types/contact.ts"
+      },
+      {
+        "source": "components/contact/ContactForm.tsx",
+        "target": "lib/types/contact.ts"
+      },
+      {
+        "source": "components/projects/ProjectGraph.tsx",
+        "target": "hooks/useProjectGraph.ts"
+      },
+      {
+        "source": "components/projects/ProjectGraph.tsx",
+        "target": "lib/types/emerge.ts"
+      },
+      {
+        "source": "components/projects/ProjectGraph.tsx",
         "target": "lib/types/github.ts"
       },
       {
-        "source": "app/page.tsx",
-        "target": "components/hero/HeroSection.tsx"
+        "source": "components/projects/ProjectGraph.tsx",
+        "target": "lib/projectGraphUtils.ts"
       },
       {
-        "source": "app/page.tsx",
-        "target": "components/projects/ProjectsSection.tsx"
+        "source": "components/projects/ProjectInfo.tsx",
+        "target": "lib/types/github.ts"
       },
       {
-        "source": "app/layout.tsx",
-        "target": "components/layout/Header.tsx"
+        "source": "components/projects/ProjectSelector.tsx",
+        "target": "lib/types/github.ts"
       },
       {
-        "source": "app/layout.tsx",
-        "target": "components/layout/Footer.tsx"
+        "source": "components/projects/ProjectsSection.tsx",
+        "target": "lib/github.ts"
       },
       {
-        "source": "app/api/github/route.ts",
+        "source": "components/projects/ProjectsSection.tsx",
+        "target": "lib/types/github.ts"
+      },
+      {
+        "source": "components/projects/ProjectsSection.tsx",
+        "target": "components/projects/ProjectSelector.tsx"
+      },
+      {
+        "source": "components/projects/ProjectsSection.tsx",
+        "target": "components/projects/ProjectInfo.tsx"
+      },
+      {
+        "source": "lib/github.ts",
         "target": "lib/constants/projects.ts"
       },
       {
-        "source": "app/api/github/route.ts",
+        "source": "lib/github.ts",
         "target": "lib/types/github.ts"
+      },
+      {
+        "source": "components/layout/LayoutShell.tsx",
+        "target": "components/layout/Header.tsx"
+      },
+      {
+        "source": "components/layout/LayoutShell.tsx",
+        "target": "components/layout/Footer.tsx"
+      },
+      {
+        "source": "components/layout/LayoutShell.tsx",
+        "target": "components/contact/ContactModal.tsx"
+      },
+      {
+        "source": "components/home/RecentPosts.tsx",
+        "target": "lib/mdx.ts"
+      },
+      {
+        "source": "components/home/RecentPosts.tsx",
+        "target": "components/blog/PostListItem.tsx"
+      },
+      {
+        "source": "components/blog/PostList.tsx",
+        "target": "lib/types/blog.ts"
+      },
+      {
+        "source": "components/blog/PostList.tsx",
+        "target": "components/blog/PostListItem.tsx"
+      },
+      {
+        "source": "components/blog/PostListItem.tsx",
+        "target": "lib/types/blog.ts"
       }
     ],
     "filesystem": [
       {
-        "source": "components/projects",
-        "target": "components/projects/ProjectsSection.tsx"
+        "source": "app",
+        "target": "app/layout.tsx"
+      },
+      {
+        "source": "app",
+        "target": "app/page.tsx"
+      },
+      {
+        "source": "app/feed.xml",
+        "target": "app/feed.xml/route.ts"
       },
       {
         "source": "lib",
-        "target": "lib/github.ts"
+        "target": "lib/mdx.ts"
+      },
+      {
+        "source": "app/api/contact",
+        "target": "app/api/contact/route.ts"
+      },
+      {
+        "source": "app/api/github",
+        "target": "app/api/github/route.ts"
+      },
+      {
+        "source": "lib/constants",
+        "target": "lib/constants/projects.ts"
       },
       {
         "source": "lib/types",
         "target": "lib/types/github.ts"
       },
       {
-        "source": "components/projects",
-        "target": "components/projects/ProjectGraph.tsx"
+        "source": "app/blog",
+        "target": "app/blog/page.tsx"
+      },
+      {
+        "source": "app/blog/[slug]",
+        "target": "app/blog/[slug]/page.tsx"
       },
       {
         "source": "hooks",
@@ -732,20 +1258,12 @@
         "target": "lib/projectGraphUtils.ts"
       },
       {
-        "source": "components/projects",
-        "target": "components/projects/ProjectInfo.tsx"
+        "source": "hooks",
+        "target": "hooks/useTextScramble.ts"
       },
       {
-        "source": "components/projects",
-        "target": "components/projects/ProjectSelector.tsx"
-      },
-      {
-        "source": "components/layout",
-        "target": "components/layout/Footer.tsx"
-      },
-      {
-        "source": "components/layout",
-        "target": "components/layout/Header.tsx"
+        "source": "lib",
+        "target": "lib/scrambleCharsets.ts"
       },
       {
         "source": "components/hero",
@@ -756,36 +1274,112 @@
         "target": "components/hero/ScrambleText.tsx"
       },
       {
-        "source": "hooks",
-        "target": "hooks/useTextScramble.ts"
+        "source": "components/contact",
+        "target": "components/contact/ContactModal.tsx"
+      },
+      {
+        "source": "lib/types",
+        "target": "lib/types/contact.ts"
+      },
+      {
+        "source": "components/contact",
+        "target": "components/contact/ContactForm.tsx"
+      },
+      {
+        "source": "components/projects",
+        "target": "components/projects/ProjectGraph.tsx"
+      },
+      {
+        "source": "components/projects",
+        "target": "components/projects/ProjectInfo.tsx"
+      },
+      {
+        "source": "components/projects",
+        "target": "components/projects/ProjectSelector.tsx"
+      },
+      {
+        "source": "components/projects",
+        "target": "components/projects/ProjectsSection.tsx"
       },
       {
         "source": "lib",
-        "target": "lib/scrambleCharsets.ts"
+        "target": "lib/github.ts"
       },
       {
-        "source": "lib/constants",
-        "target": "lib/constants/projects.ts"
+        "source": "components/layout",
+        "target": "components/layout/LayoutShell.tsx"
+      },
+      {
+        "source": "components/layout",
+        "target": "components/layout/Footer.tsx"
+      },
+      {
+        "source": "components/layout",
+        "target": "components/layout/Header.tsx"
+      },
+      {
+        "source": "components/home",
+        "target": "components/home/RecentPosts.tsx"
+      },
+      {
+        "source": "components/blog",
+        "target": "components/blog/PostList.tsx"
+      },
+      {
+        "source": "lib/types",
+        "target": "lib/types/blog.ts"
+      },
+      {
+        "source": "components/blog",
+        "target": "components/blog/PostBody.tsx"
+      },
+      {
+        "source": "components/blog",
+        "target": "components/blog/PostListItem.tsx"
       },
       {
         "source": "app",
-        "target": "app/page.tsx"
+        "target": "app/feed.xml"
+      },
+      {
+        "source": "app/api",
+        "target": "app/api/contact"
       },
       {
         "source": "app",
-        "target": "app/layout.tsx"
+        "target": "app/api"
       },
       {
-        "source": "app/api/github",
-        "target": "app/api/github/route.ts"
+        "source": "app/api",
+        "target": "app/api/github"
       },
       {
-        "source": "components",
-        "target": "components/projects"
+        "source": "lib",
+        "target": "lib/constants"
       },
       {
         "source": "lib",
         "target": "lib/types"
+      },
+      {
+        "source": "app",
+        "target": "app/blog"
+      },
+      {
+        "source": "app/blog",
+        "target": "app/blog/[slug]"
+      },
+      {
+        "source": "components",
+        "target": "components/hero"
+      },
+      {
+        "source": "components",
+        "target": "components/contact"
+      },
+      {
+        "source": "components",
+        "target": "components/projects"
       },
       {
         "source": "components",
@@ -793,29 +1387,21 @@
       },
       {
         "source": "components",
-        "target": "components/hero"
+        "target": "components/home"
       },
       {
-        "source": "lib",
-        "target": "lib/constants"
-      },
-      {
-        "source": "app/api",
-        "target": "app/api/github"
-      },
-      {
-        "source": "app",
-        "target": "app/api"
+        "source": "components",
+        "target": "components/blog"
       }
     ]
   },
   "clusters": [
     {
       "id": 0,
-      "label": "projects",
+      "label": "hooks",
       "nodeCount": 4,
       "sloc": 1154,
-      "slocPercent": 57.7,
+      "slocPercent": 40.86,
       "avgFanIn": 1.2,
       "avgFanOut": 1.8,
       "avgMethods": 2.2
@@ -823,106 +1409,163 @@
     {
       "id": 1,
       "label": "projects",
-      "nodeCount": 6,
-      "sloc": 346,
-      "slocPercent": 17.3,
-      "avgFanIn": 1.5,
-      "avgFanOut": 1.12,
-      "avgMethods": 0.75
+      "nodeCount": 7,
+      "sloc": 439,
+      "slocPercent": 15.55,
+      "avgFanIn": 1.4,
+      "avgFanOut": 1.1,
+      "avgMethods": 0.9
     },
     {
       "id": 2,
+      "label": "contact",
+      "nodeCount": 3,
+      "sloc": 351,
+      "slocPercent": 12.43,
+      "avgFanIn": 0.8,
+      "avgFanOut": 1.2,
+      "avgMethods": 0.2
+    },
+    {
+      "id": 3,
       "label": "hero",
       "nodeCount": 4,
-      "sloc": 312,
-      "slocPercent": 15.6,
-      "avgFanIn": 1.67,
+      "sloc": 328,
+      "slocPercent": 11.61,
+      "avgFanIn": 2.17,
       "avgFanOut": 1.17,
       "avgMethods": 0.5
     },
     {
-      "id": 3,
-      "label": "projects",
-      "nodeCount": 1,
-      "sloc": 63,
-      "slocPercent": 3.15,
-      "avgFanIn": 0.75,
-      "avgFanOut": 1.5,
-      "avgMethods": 0.5
-    },
-    {
       "id": 4,
-      "label": "layout",
-      "nodeCount": 1,
-      "sloc": 39,
-      "slocPercent": 1.95,
-      "avgFanIn": 0,
-      "avgFanOut": 0,
+      "label": "feed.xml",
+      "nodeCount": 3,
+      "sloc": 143,
+      "slocPercent": 5.06,
+      "avgFanIn": 1.14,
+      "avgFanOut": 1.14,
       "avgMethods": 1
     },
     {
       "id": 5,
       "label": "app",
-      "nodeCount": 1,
-      "sloc": 39,
-      "slocPercent": 1.95,
-      "avgFanIn": 0.8,
-      "avgFanOut": 0.8,
-      "avgMethods": 0.2
+      "nodeCount": 3,
+      "sloc": 133,
+      "slocPercent": 4.71,
+      "avgFanIn": 0.89,
+      "avgFanOut": 1.22,
+      "avgMethods": 0.67
     },
     {
       "id": 6,
-      "label": "layout",
-      "nodeCount": 1,
-      "sloc": 32,
-      "slocPercent": 1.6,
-      "avgFanIn": 0.5,
-      "avgFanOut": 0.5,
-      "avgMethods": 0.5
+      "label": "blog",
+      "nodeCount": 4,
+      "sloc": 94,
+      "slocPercent": 3.33,
+      "avgFanIn": 1.33,
+      "avgFanOut": 0.83,
+      "avgMethods": 0.67
     },
     {
       "id": 7,
-      "label": "app",
+      "label": "projects",
       "nodeCount": 1,
-      "sloc": 15,
-      "slocPercent": 0.75,
+      "sloc": 63,
+      "slocPercent": 2.23,
+      "avgFanIn": 0.75,
+      "avgFanOut": 1.5,
+      "avgMethods": 0.5
+    },
+    {
+      "id": 8,
+      "label": "layout",
+      "nodeCount": 1,
+      "sloc": 47,
+      "slocPercent": 1.66,
+      "avgFanIn": 0,
+      "avgFanOut": 0,
+      "avgMethods": 1
+    },
+    {
+      "id": 9,
+      "label": "blog",
+      "nodeCount": 1,
+      "sloc": 25,
+      "slocPercent": 0.89,
       "avgFanIn": 0.67,
       "avgFanOut": 0.67,
       "avgMethods": 0.33
+    },
+    {
+      "id": 10,
+      "label": "layout",
+      "nodeCount": 1,
+      "sloc": 24,
+      "slocPercent": 0.85,
+      "avgFanIn": 0.75,
+      "avgFanOut": 1,
+      "avgMethods": 0.25
+    },
+    {
+      "id": 11,
+      "label": "app",
+      "nodeCount": 1,
+      "sloc": 23,
+      "slocPercent": 0.81,
+      "avgFanIn": 0.75,
+      "avgFanOut": 0.75,
+      "avgMethods": 0.25
     }
   ],
   "filesystem": {
     "tree": [
       {
-        "id": "components",
-        "displayName": "components",
+        "id": "app",
+        "displayName": "app",
         "children": [
           {
-            "id": "components/projects",
-            "displayName": "projects",
+            "id": "app/feed.xml",
+            "displayName": "feed.xml",
             "children": [
-              "components/projects/ProjectsSection.tsx",
-              "components/projects/ProjectGraph.tsx",
-              "components/projects/ProjectInfo.tsx",
-              "components/projects/ProjectSelector.tsx"
+              "app/feed.xml/route.ts"
             ]
           },
           {
-            "id": "components/layout",
-            "displayName": "layout",
+            "id": "app/api",
+            "displayName": "api",
             "children": [
-              "components/layout/Footer.tsx",
-              "components/layout/Header.tsx"
+              {
+                "id": "app/api/contact",
+                "displayName": "contact",
+                "children": [
+                  "app/api/contact/route.ts"
+                ]
+              },
+              {
+                "id": "app/api/github",
+                "displayName": "github",
+                "children": [
+                  "app/api/github/route.ts"
+                ]
+              }
             ]
           },
           {
-            "id": "components/hero",
-            "displayName": "hero",
+            "id": "app/blog",
+            "displayName": "blog",
             "children": [
-              "components/hero/HeroSection.tsx",
-              "components/hero/ScrambleText.tsx"
+              {
+                "id": "app/blog/[slug]",
+                "displayName": "[slug]",
+                "children": [
+                  "app/blog/[slug]/page.tsx"
+                ]
+              },
+              "app/blog/page.tsx"
             ]
-          }
+          },
+          "app/layout.tsx",
+          "app/page.tsx"
         ]
       },
       {
@@ -930,23 +1573,26 @@
         "displayName": "lib",
         "children": [
           {
-            "id": "lib/types",
-            "displayName": "types",
-            "children": [
-              "lib/types/github.ts",
-              "lib/types/emerge.ts"
-            ]
-          },
-          {
             "id": "lib/constants",
             "displayName": "constants",
             "children": [
               "lib/constants/projects.ts"
             ]
           },
-          "lib/github.ts",
+          {
+            "id": "lib/types",
+            "displayName": "types",
+            "children": [
+              "lib/types/github.ts",
+              "lib/types/emerge.ts",
+              "lib/types/contact.ts",
+              "lib/types/blog.ts"
+            ]
+          },
+          "lib/mdx.ts",
           "lib/projectGraphUtils.ts",
-          "lib/scrambleCharsets.ts"
+          "lib/scrambleCharsets.ts",
+          "lib/github.ts"
         ]
       },
       {
@@ -958,42 +1604,78 @@
         ]
       },
       {
-        "id": "app",
-        "displayName": "app",
+        "id": "components",
+        "displayName": "components",
         "children": [
           {
-            "id": "app/api",
-            "displayName": "api",
+            "id": "components/hero",
+            "displayName": "hero",
             "children": [
-              {
-                "id": "app/api/github",
-                "displayName": "github",
-                "children": [
-                  "app/api/github/route.ts"
-                ]
-              }
+              "components/hero/HeroSection.tsx",
+              "components/hero/ScrambleText.tsx"
             ]
           },
-          "app/page.tsx",
-          "app/layout.tsx"
+          {
+            "id": "components/contact",
+            "displayName": "contact",
+            "children": [
+              "components/contact/ContactModal.tsx",
+              "components/contact/ContactForm.tsx"
+            ]
+          },
+          {
+            "id": "components/projects",
+            "displayName": "projects",
+            "children": [
+              "components/projects/ProjectGraph.tsx",
+              "components/projects/ProjectInfo.tsx",
+              "components/projects/ProjectSelector.tsx",
+              "components/projects/ProjectsSection.tsx"
+            ]
+          },
+          {
+            "id": "components/layout",
+            "displayName": "layout",
+            "children": [
+              "components/layout/LayoutShell.tsx",
+              "components/layout/Footer.tsx",
+              "components/layout/Header.tsx"
+            ]
+          },
+          {
+            "id": "components/home",
+            "displayName": "home",
+            "children": [
+              "components/home/RecentPosts.tsx"
+            ]
+          },
+          {
+            "id": "components/blog",
+            "displayName": "blog",
+            "children": [
+              "components/blog/PostList.tsx",
+              "components/blog/PostBody.tsx",
+              "components/blog/PostListItem.tsx"
+            ]
+          }
         ]
       }
     ]
   },
   "stats": {
     "maxFanIn": {
-      "value": 7,
-      "file": "lib/types/github.ts"
+      "value": 9,
+      "file": "react"
     },
     "maxFanOut": {
       "value": 6,
       "file": "components/projects/ProjectsSection.tsx"
     },
-    "avgSloc": 105.26,
+    "avgSloc": 85.58,
     "avgFanIn": 1.12,
     "avgFanOut": 1.12,
-    "avgMethods": 1.37,
-    "louvainCommunities": 8,
-    "louvainModularity": 0.65
+    "avgMethods": 1.42,
+    "louvainCommunities": 12,
+    "louvainModularity": 0.69
   }
 }
