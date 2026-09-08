@@ -9,6 +9,14 @@ projects.config.json    →    analyze.sh    →    transform.ts    →    {proj
      (config)              (clone + emerge)     (clean + optimize)    (ready for Three.js)
 ```
 
+> **Pending changes — decided, not yet implemented.** Two parts of what follows are already
+> superseded by decisions on
+> [Map: Skin Club in the Projects section](https://github.com/Jotace5/www-portfolio/issues/61):
+> the config's flat `repo` field is being replaced by a `source` block that is either `github` or
+> `local` (see [ADR-0001](../docs/adr/0001-project-source-resolution.md)), and the GitHub Action
+> is being removed in favour of running the pipeline manually. Everything below describes the
+> pipeline as it works **today**.
+
 ## Pipeline flow
 
 1. **Config** — `projects.config.json` defines which repos to analyze, with what languages and file extensions.
@@ -156,15 +164,12 @@ www-portfolio/
 │   └── README.md                           # This file
 ├── public/data/projects/
 │   ├── www-portfolio.json                  # Generated — committed to git
-│   ├── audio-transcriber.json              # Generated — committed to git
 │   └── .raw/                               # Staging — gitignored
-│       ├── www-portfolio/
-│       │   ├── dependency-graph.json       # Raw emerge output
-│       │   ├── filesystem-graph.json
-│       │   ├── metrics.json
-│       │   └── emerge-data.js
-│       └── audio-transcriber/
-│           └── ...
+│       └── www-portfolio/                  # One directory per configured project
+│           ├── dependency-graph.json       # Raw emerge output
+│           ├── filesystem-graph.json
+│           ├── metrics.json
+│           └── emerge-data.js
 └── .venv/                                  # Python venv — gitignored
 ```
 
@@ -177,7 +182,7 @@ The pipeline runs automatically in CI via `.github/workflows/analyze-projects.ym
 The workflow runs in two scenarios:
 
 - **On push to `main`** — Only when `projects.config.json` changes. This is the normal flow for adding a new project: you create a branch, edit the config, open a PR, merge to main, and the Action runs immediately.
-- **Weekly cron** (Mondays at 6:00 AM UTC) — Re-analyzes all configured projects to keep the data fresh, even if `projects.config.json` hasn't changed. This catches changes in the source repos themselves (e.g., new commits to `audio-transcriber`).
+- **Weekly cron** (Mondays at 6:00 AM UTC) — Re-analyzes all configured projects to keep the data fresh, even if `projects.config.json` hasn't changed. This catches changes in the source repos themselves — new commits to a configured project.
 
 You can also trigger the workflow manually from the Actions tab in GitHub (`workflow_dispatch`).
 
