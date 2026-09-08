@@ -62,16 +62,13 @@ pip install "setuptools<70" emerge-viz
 source .venv/bin/activate                       # Linux/macOS
 # source .venv/Scripts/activate                 # Windows (Git Bash)
 
-# Run analysis (clones repos, runs emerge)
+# Clone each configured project, run emerge, then transform the raw output
 ./scripts/analyze.sh
-
-# Transform raw output to visualizer format
-npx tsx scripts/transform.ts \
-  --input public/data/projects/.raw/www-portfolio \
-  --output public/data/projects/www-portfolio.json
 ```
 
-> **Note:** Once the transform step is integrated into `analyze.sh`, only the first command will be needed. The script will automatically call `transform.ts` for each project after emerge finishes.
+> **Note:** `analyze.sh` calls `transform.ts` itself, once per project, as soon as emerge
+> finishes. Running the transformer by hand is only needed to re-process raw output that is
+> already staged in `.raw/`, without re-running the analysis.
 
 ## Adding a new project
 
@@ -111,9 +108,6 @@ Then run the pipeline:
 
 ```bash
 ./scripts/analyze.sh
-npx tsx scripts/transform.ts \
-  --input public/data/projects/.raw/my-project \
-  --output public/data/projects/my-project.json
 ```
 
 ## What emerge analyzes
