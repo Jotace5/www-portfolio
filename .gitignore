@@ -49,3 +49,6 @@ next-env.d.ts
 # Emerge raw analysis output (staging, not for production)
 public/data/projects/.raw/
 .claude/
+
+.env*
+!.env.example
